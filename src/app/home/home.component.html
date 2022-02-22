@@ -1,0 +1,148 @@
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="./home.component.css">
+<div class="main" role="main">
+  <div class="sidebar close">
+    <div class="logo-details">
+      <i class='bx bx-mail-send'></i>
+      <span class="logo_name">Zeta</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#"></a></li>
+        </ul>
+      </li>
+      <li class="hover-link">
+        <a href="#">
+          <i class='bx bxs-inbox'></i>
+          <span class="link_name">Inbox</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Inbox</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bxs-star'></i>
+          <span class="link_name">Starred</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Starred</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bxs-bookmark'></i>
+          <span class="link_name">Important</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Important</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bxs-navigation'></i>
+          <span class="link_name">Sent</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Sent</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bxs-error-alt'></i>
+          <span class="link_name">Spam</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Spam</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-menu-alt-left'></i>
+            <span class="link_name">More</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' (click)="callfun()" ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">More</a></li>
+          <li><a href="#"><i class='bx bxs-trash'></i>Rash</a></li>
+          <li><a href="#"><i class='bx bxs-folder'></i>Folders</a></li>
+          <li><a href="#"><i class='bx bxs-user-badge'></i>Social</a></li>
+        </ul>
+      </li>
+
+
+      <!--    =================Theme change========-->
+      <li class="mode"  >
+        <div class="sun-moon">
+          <i class='bx bxs-sun sun'></i>
+          <i class='bx bxs-moon moon'></i>
+          <div class="toggle-switch">
+            <span class="switch"></span>
+          </div>
+        </div>
+      </li>
+      <!--    =====================================================-->
+      <li>
+        <a href="login.php">
+          <i class='bx bx-log-out'></i>
+          <span class="link_name">Logout</span>
+          <ul class="sub-menu blank">
+            <li><a class="link_name" href="#">Logout</a></li>
+          </ul>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+  <section class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu' (click)="callfun()" ></i>
+      <i class='bx bx-plus-circle'></i>
+      <i class='bx bx-revision'></i>
+      <div class="boxContainer">
+        <form action="" class="search-bar">
+          <input type="text" placeholder="Search" name="q">
+          <button type="submit"><i class='bx bx-search'></i></button>
+        </form>
+      </div>
+      <i class='bx bxs-cog' ></i>
+    </div>
+    <div class="content-box">
+      <div>
+        <button id="primary" class="offset"><i class='bx bxs-inbox'></i>Primary</button>
+        <button id="from" class="offset"><i class='bx bxs-user-detail'></i>From</button>
+        <button id="content" class="offset"><i class='bx bxs-book-content'></i>Content</button>
+        <button id="domain" class="offset"><i class='bx bx-message-rounded-dots'></i>Domain</button>
+        <button id="subject" class="offset"><i class='bx bx-file-blank'></i>Subject</button>
+        <button id="addnew" class="offset">+</button>
+      </div>
+      <div id="content-details">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium et ipsam nemo
+          quae saepe tempore! Atque consequuntur, cupiditate deserunt
+          dolor eaque earum fuga hic iste magni mollitia, nostrum odit ut.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!--  =========footer=====-->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-menu">
+        <ul class="f-menu">
+          <li><a href="">Home</a></li>
+          <li><a href="">Privacy Policy</a></li>
+          <li><a href="">About Us</a></li>
+        </ul>
+      </div>
+      <p>copyright &copy;2022 <a href="#">Zeta</a> </p>
+    </div>
+  </footer>
+
+
+</div>
+
