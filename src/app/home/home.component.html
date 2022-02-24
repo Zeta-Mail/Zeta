@@ -80,7 +80,7 @@
           <i class='bx bxs-sun sun'></i>
           <i class='bx bxs-moon moon'></i>
           <div class="toggle-switch">
-            <span class="switch"></span>
+            <span class="switch" (click)="callfun()"></span>
           </div>
         </div>
       </li>
@@ -112,13 +112,13 @@
       <i class='bx bxs-cog' ></i>
     </div>
     <div class="content-box">
-      <div>
-        <button id="primary" class="offset"><i class='bx bxs-inbox'></i>Primary</button>
-        <button id="from" class="offset"><i class='bx bxs-user-detail'></i>From</button>
-        <button id="content" class="offset"><i class='bx bxs-book-content'></i>Content</button>
-        <button id="domain" class="offset"><i class='bx bx-message-rounded-dots'></i>Domain</button>
-        <button id="subject" class="offset"><i class='bx bx-file-blank'></i>Subject</button>
-        <button id="addnew" class="offset">+</button>
+      <div class="access-btn">
+        <button id="primary" (click)="callReplaceContent()"><i class='bx bxs-inbox'></i>Primary</button>
+        <button id="from"><i class='bx bxs-user-detail'></i>From</button>
+        <button id="content"><i class='bx bxs-book-content'></i>Content</button>
+        <button id="domain"><i class='bx bx-message-rounded-dots'></i>Domain</button>
+        <button id="subject"><i class='bx bx-file-blank'></i>Subject</button>
+        <button id="addnew"><i class='bx bx-plus'></i></button>
       </div>
       <div id="content-details">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium et ipsam nemo

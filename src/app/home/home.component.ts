@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 declare const myFun:any;
+declare const replaceContent:any;
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -11,9 +12,14 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.callfun();
+    this.callReplaceContent();
   }
   callfun(){
     myFun();
+  }
+
+  callReplaceContent(){
+    replaceContent();
   }
 
 

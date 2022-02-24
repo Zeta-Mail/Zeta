@@ -12,10 +12,7 @@ function myFun() {
   sidebarBtn.addEventListener("click", () => {
     sidebar.classList.toggle("close");
   });
-}
 
-// ===================
-function themeChange() {
   const body = document.querySelector('body'),
     modeSwitch = body.querySelector(".toggle-switch"),
     modeText = body.querySelector(".mode-text");
@@ -31,4 +28,35 @@ function themeChange() {
 
     }
   });
+}
+
+function replaceContent(){
+  let primary=document.querySelector('#primary');
+  let from=document.querySelector('#from');
+  let content=document.querySelector('#content');
+  let domain=document.querySelector('#domain');
+  let subject=document.querySelector('#subject');
+  let addnew=document.querySelector('#addnew');
+  let contentDetails=document.querySelector('#content-details');
+  let p=document.querySelector('p');
+
+  primary.addEventListener('click',()=>{
+    p.innerText='Primary';
+  });
+  from.addEventListener('click',()=>{
+    p.innerText='From';
+  });
+  content.addEventListener('click',()=>{
+    p.innerText='Content';
+  });
+  domain.addEventListener('click',()=>{
+    p.innerText='Domain';
+  });
+  subject.addEventListener('click',()=>{
+    p.innerText='Subject';
+  });
+  addnew.addEventListener('click',()=>{
+    p.innerText='Content';
+  });
+
 }
