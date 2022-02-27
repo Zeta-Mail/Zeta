@@ -517,3 +517,153 @@ footer p a:hover {
   opacity: 0.5;
 }
 
+/*==============================content==============*/
+.details-box{
+  height: 500px;
+  width: 900px;
+  max-width: 1150px;
+  background:none;
+  margin-top: 30px;
+  align-items: center;
+  border: 2px solid #000;
+  border-radius: 10px;
+}
+
+/*===========================primary Content==============*/
+select{
+  --webkit-appearance:none;
+  --moz-appearance:none;
+  --ms-appearance:none;
+  appearance: none;
+  outline:0;
+  box-shadow: none;
+  border: 0!important;
+  background: #b6adad;
+  flex:1;
+  padding: 0 .5em;
+  color: #000;
+  cursor: pointer;
+  font-size: 20px;
+
+}
+select::-ms-expand{
+  display: none;
+}
+.select{
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  line-height:3;
+  background: #8a8383;
+  overflow: hidden;
+  border-radius: .25em;
+  margin-top:-8%;
+  margin-left:350px;
+}
+.select::after{
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #706d6d;
+  cursor: pointer;
+  pointer-events: none;
+  transition: .25s all ease;
+}
+.select:hover::after{
+  color:#040A3F;
+}
+
+.primaryText{
+  font-size: 30px;
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  line-height:3;
+  overflow: hidden;
+  border-radius: .25em;
+  margin-top: 15%;
+  margin-left:150px;
+}
+
+/*================From content=====================*/
+.fromText{
+  font-size: 30px;
+  position: relative;
+  display: flex;
+  width: 550px;
+  height: 25px;
+  line-height:1;
+  overflow: hidden;
+  border-radius: .25em;
+  margin-top: 10%;
+  margin-left:50px;
+}
+.fromInput{
+  margin-top: 2%;
+  margin-left:50px;
+  width: 500px;
+  height: 50px;
+  font-size: 20px;
+  border: none;
+  border-bottom: 1px solid#000;
+  outline: none;
+}
+.nextGoBtn{
+  border: none;
+  background:white;
+  top: 500px;
+}
+
+/*===================Content content====================*/
+.contentText{
+  font-size: 20px;
+  position: relative;
+  display: flex;
+  width: 550px;
+  height: 25px;
+  line-height:1;
+  overflow: hidden;
+  border-radius: .25em;
+  margin-top: 5%;
+  margin-left:50px;
+}
+.contentInput{
+  margin-top:2%;
+  margin-left:50px;
+  width: 500px;
+  height: 50px;
+  font-size: 20px;
+  border: none;
+  border-bottom: 1px solid#000;
+  outline: none;
+}
+
+
+/*===================Domain content====================*/
+.domainText{
+  font-size: 30px;
+  position: relative;
+  display: flex;
+  width: 550px;
+  height: 25px;
+  line-height:1;
+  overflow: hidden;
+  border-radius: .25em;
+  margin-top: 10%;
+  margin-left:50px;
+}
+.domainInput{
+  margin-top: 2%;
+  margin-left:50px;
+  width: 500px;
+  height: 50px;
+  font-size: 20px;
+  border: none;
+  border-bottom: 1px solid#000;
+  outline: none;
+}
+

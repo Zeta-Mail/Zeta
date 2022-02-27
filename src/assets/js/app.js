@@ -6,6 +6,10 @@ function myFun() {
       arrowParent.classList.toggle("showMenu");
     });
   }
+}
+
+
+function changeTheme(){
   let sidebar = document.querySelector(".sidebar");
   let sidebarBtn = document.querySelector(".bx-menu");
   console.log(sidebarBtn);
@@ -28,35 +32,4 @@ function myFun() {
 
     }
   });
-}
-
-function replaceContent(){
-  let primary=document.querySelector('#primary');
-  let from=document.querySelector('#from');
-  let content=document.querySelector('#content');
-  let domain=document.querySelector('#domain');
-  let subject=document.querySelector('#subject');
-  let addnew=document.querySelector('#addnew');
-  let contentDetails=document.querySelector('#content-details');
-  let p=document.querySelector('p');
-
-  primary.addEventListener('click',()=>{
-    p.innerText='Primary';
-  });
-  from.addEventListener('click',()=>{
-    p.innerText='From';
-  });
-  content.addEventListener('click',()=>{
-    p.innerText='Content';
-  });
-  domain.addEventListener('click',()=>{
-    p.innerText='Domain';
-  });
-  subject.addEventListener('click',()=>{
-    p.innerText='Subject';
-  });
-  addnew.addEventListener('click',()=>{
-    p.innerText='Content';
-  });
-
 }
