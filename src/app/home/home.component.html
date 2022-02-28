@@ -86,11 +86,11 @@
       </li>
       <!--    =====================================================-->
       <li>
-        <a href="login.php">
+        <a href="src/app/home/login.php">
           <i class='bx bx-log-out'></i>
           <span class="link_name">Logout</span>
           <ul class="sub-menu blank">
-            <li><a class="link_name" href="#">Logout</a></li>
+            <li><a class="link_name" href="src/app/login/login.php">Logout</a></li>
           </ul>
         </a>
       </li>
@@ -117,7 +117,7 @@
         <button id="from" (click)="onClickFrom()"><i class='bx bxs-user-detail'></i>{{From?"From":"From"}}</button>
         <button id="content" (click)="onClickContent()"><i class='bx bxs-book-content'></i>Content</button>
         <button id="domain" (click)="onClickDomain()"><i class='bx bx-message-rounded-dots'></i>Domain</button>
-        <button id="subject"><i class='bx bx-file-blank'></i>Subject</button>
+        <button id="subject" (click)="onClickSubject()"><i class='bx bx-file-blank'></i>Subject</button>
         <button id="addnew"><i class='bx bx-plus'></i></button>
       </div>
 
@@ -175,12 +175,14 @@
       </ng-container>
 
       <!--        ===================subject======================-->
-      <ng-container *ngIf="visible_domain">
+      <ng-container *ngIf="visible_subject">
         <div class="details-box">
-          <h4 class="domainText">Includes the words</h4>
-          <input class="domainInput" placeholder="com/org/lk" type="text">
-          <h4 class="domainText">Enter Folder Name</h4>
-          <input class="domainInput" placeholder="Folder" type="text">
+          <h4 class="subjectText">Includes The Words</h4>
+          <input class="subjectInput" placeholder="Seperate the words/phrase using a comma" type="text">
+          <h4 class="subjectText">Doesn't Include The Words</h4>
+          <input class="subjectInput" placeholder="Separate the word/phrase using a comma" type="text">
+          <h4 class="subjectText">Enter Folder Name</h4>
+          <input class="subjectInput" placeholder="Folder" type="text">
           <button class="nextGoBtn">Create Folder<i class='bx bxs-right-arrow'></i></button>
         </div>
       </ng-container>
@@ -202,7 +204,5 @@
       <p>copyright &copy;2022 <a href="#">Zeta</a> </p>
     </div>
   </footer>
-
-
 </div>
 
