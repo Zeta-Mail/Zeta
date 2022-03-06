@@ -242,6 +242,7 @@
 		</div>
 
 
+<<<<<<< HEAD
 		<!-- Subject -->
 
 		<div id="myModal3" class="modal3">
@@ -268,6 +269,54 @@
 
 
 		<!-- Domain -->
+=======
+      <!--    =================Theme change========-->
+      <li class="mode">
+        <div class="sun-moon">
+          <i class='bx bxs-sun sun'></i>
+          <i class='bx bxs-moon moon'></i>
+          <div class="toggle-switch">
+            <span class="switch" ></span>
+          </div>
+        </div>
+      </li>
+      <!--    =====================================================-->
+      <li>
+        <a href="src/app/home/login.php">
+          <i class='bx bx-log-out'></i>
+          <span class="link_name">Logout</span>
+          <ul class="sub-menu blank">
+            <li><a class="link_name" href="src/app/login/login.php">Logout</a></li>
+          </ul>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+  <section class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu' (click)="callfun()"></i>
+      <i class='bx bx-plus-circle'></i>
+      <i class='bx bx-revision'></i>
+      <div class="boxContainer">
+        <form action="" class="search-bar">
+          <input type="text" placeholder="Search" name="q">
+          <button type="submit"><i class='bx bx-search'></i></button>
+        </form>
+      </div>
+      <i class='bx bxs-cog' ></i>
+    </div>
+    <div class="content-box">
+      <div class="access-btn">
+        <button id="primary" (click)="onClickPrimary()"><i class='bx bxs-inbox'></i>{{Primary?"Primary":"Primary"}}</button>
+        <button id="from" (click)="onClickFrom()"><i class='bx bxs-user-detail'></i>{{From?"From":"From"}}</button>
+        <button id="content" (click)="onClickContent()"><i class='bx bxs-book-content'></i>Content</button>
+        <button id="domain" (click)="onClickDomain()"><i class='bx bx-message-rounded-dots'></i>Domain</button>
+        <button id="subject" (click)="onClickSubject()"><i class='bx bx-file-blank'></i>Subject</button>
+        <button id="addnew"><i class='bx bx-plus'></i></button>
+      </div>
+>>>>>>> df72c778ff50b70654a6ed514ae4742f0abbff4d
 
 		<div id="myModal4" class="modal4">
 
@@ -309,8 +358,77 @@
 	
 
 
+<<<<<<< HEAD
 	<script src="assets/js/home.js"></script>
 	
 </body>
+=======
+<!--        =======================From==================-->
+        <ng-container *ngIf="visible_from">
+          <div class="details-box">
+              <h4 class="fromText">Enter Sender's Email Address</h4>
+              <input class="fromInput" placeholder="example@gmail.com" type="text">
+              <h4 class="fromText">Enter Folder Name</h4>
+              <input class="fromInput" placeholder="Folder" type="text">
+            <button class="nextGoBtn">Create Folder<i class='bx bxs-right-arrow'></i></button>
+          </div>
+        </ng-container>
+
+      <!--        ====================Subject & Content=====================-->
+      <ng-container *ngIf="visible_content">
+        <div class="details-box">
+          <h4 class="contentText">Enter The Subject</h4>
+          <input class="contentInput" type="text">
+          <h4 class="contentText">Enter Keyword</h4>
+          <input class="contentInput" placeholder="Separate using a content" type="text">
+          <h4 class="contentText">Enter Folder Name</h4>
+          <input class="contentInput" placeholder="Folder" type="text">
+          <button class="nextGoBtn">Create Folder<i class='bx bxs-right-arrow'></i></button>
+        </div>
+      </ng-container>
+
+      <!--        ===================Domain======================-->
+      <ng-container *ngIf="visible_domain">
+        <div class="details-box">
+          <h4 class="domainText">Enter Domain Name</h4>
+          <input class="domainInput" placeholder="com/org/lk" type="text">
+          <h4 class="domainText">Enter Folder Name</h4>
+          <input class="domainInput" placeholder="Folder" type="text">
+          <button class="nextGoBtn">Create Folder<i class='bx bxs-right-arrow'></i></button>
+        </div>
+      </ng-container>
+
+      <!--        ===================subject======================-->
+      <ng-container *ngIf="visible_subject">
+        <div class="details-box">
+          <h4 class="subjectText">Includes The Words</h4>
+          <input class="subjectInput" placeholder="Seperate the words/phrase using a comma" type="text">
+          <h4 class="subjectText">Doesn't Include The Words</h4>
+          <input class="subjectInput" placeholder="Separate the word/phrase using a comma" type="text">
+          <h4 class="subjectText">Enter Folder Name</h4>
+          <input class="subjectInput" placeholder="Folder" type="text">
+          <button class="nextGoBtn">Create Folder<i class='bx bxs-right-arrow'></i></button>
+        </div>
+      </ng-container>
+
+
+    </div>
+  </section>
+
+  <!--  =========footer=====-->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-menu">
+        <ul class="f-menu">
+          <li><a href="">Home</a></li>
+          <li><a href="">Privacy Policy</a></li>
+          <li><a href="">About Us</a></li>
+        </ul>
+      </div>
+      <p>copyright &copy;2022 <a href="#">Zeta</a> </p>
+    </div>
+  </footer>
+</div>
+>>>>>>> df72c778ff50b70654a6ed514ae4742f0abbff4d
 
 </html>
