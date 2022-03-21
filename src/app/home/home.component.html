@@ -322,25 +322,14 @@
       
       <hr>
     
-      <li class="mode">
-        <div class="sun-moon">
-          <i class='bx bxs-sun sun'></i>
-          <i class='bx bxs-moon moon'></i>
-          
-          <div class="toggle-switch">
-            <span class="switch"></span>
-          </div>
-        </div>
-      </li>
-      
-      <hr>
-    
       <li>
         <button onclick="settingsWindow()">
           <i class='bx bxs-cog'></i>
           <span class="link_name">Settings</span>
         </button>
       </li>
+
+      <hr>
     
       <li>
         <a href="login.php">
@@ -381,10 +370,10 @@
       <div class="Filter"><button id="Filter">&nbsp;&nbsp;Filter By <i class='bx bxs-chevron-down arrow' ></i><hr></button></div>
       
       <div id="FilterO" class="FilterO">
-        <div id="From" class="FilterOptions"><button>&nbsp;&nbsp;From</button></div>
-        <div id="Content" class="FilterOptions"><button>&nbsp;&nbsp;Content</button></div>
-        <div id="Subject" class="FilterOptions"><button>&nbsp;&nbsp;Subject</button></div>
-        <div id="Domain" class="FilterOptions"><button>&nbsp;&nbsp;Domain</button></div>
+        <div id="FromPh" class="FilterOptions"><button>&nbsp;&nbsp;From</button></div>
+        <div id="ContentPh" class="FilterOptions"><button>&nbsp;&nbsp;Content</button></div>
+        <div id="SubjectPh" class="FilterOptions"><button>&nbsp;&nbsp;Subject</button></div>
+        <div id="DomainPh" class="FilterOptions"><button>&nbsp;&nbsp;Domain</button></div>
       </div>
      
     </div>
@@ -399,10 +388,10 @@
     <div class="modal-content1">
       <span class="close1">&times;</span>
       <div class="textfilter">Enter Sender's Email Address</div>
-      <span><input type="email" id="email" name="email" value="example@gmail.com"></span>
+      <span><input type="email" id="email1" name="email" value="example@gmail.com"></span>
 
       <div class="textfilter">Enter Folder Name</div>
-      <span><input type="text" id="email" name="folderName" value="folder"></span></br>
+      <span><input type="text" id="folderName1" name="folderName" value="folder"></span></br>
         
       <span class="back"><button id="back1">Back</button></span>
       <span class="create"><button id="create1">Create Folder</button></span>
@@ -420,13 +409,13 @@
     <div class="modal-content2">
       <span class="close2">&times;</span>
       <div class="textfilter">Includes the words</div>
-      <span><input type="text" id="words" name="words" value="separate using a comma"></span>
+      <span><input type="text" id="words1" name="words" value="separate using a comma"></span>
 
       <div class="textfilter">Doesn't Include the words</div>
-      <span><input type="text" id="nowords" name="nowords" value="separate using a comma"></span>
+      <span><input type="text" id="nowords1" name="nowords" value="separate using a comma"></span>
         
       <div class="textfilter">Enter Folder Name</div>
-      <span><input type="text" id="email" name="folderName" value="folder"></span>
+      <span><input type="text" id="folderName2" name="folderName" value="folder"></span>
         
       </br>
         
@@ -445,13 +434,13 @@
     <div class="modal-content3">
       <span class="close3">&times;</span>
       <div class="textfilter">Enter the subject</div>
-      <span><input type="text" id="subject" name="subject" value=""></span>
+      <span><input type="text" id="subjectPh1" name="subject" value=""></span>
 
       <div class="textfilter">Enter Keywords</div>
-      <span><input type="text" id="nowords" name="nowords" value="separate using a comma"></span>
+      <span><input type="text" id="nowords2" name="nowords" value="separate using a comma"></span>
         
       <div class="textfilter">Enter Folder Name</div>
-      <span><input type="text" id="email" name="folderName" value="folder"></span>
+      <span><input type="text" id="folderName3" name="folderName" value="folder"></span>
         
       </br>
         
@@ -470,10 +459,10 @@
     <div class="modal-content4">
       <span class="close4">&times;</span>
       <div class="textfilter">Enter Domain name</div>
-      <span><input type="text" id="domain" name="domain" value="com/org/lk"></span>
+      <span><input type="text" id="domainPh2" name="domain" value="com/org/lk"></span>
 
       <div class="textfilter">Enter Folder Name</div>
-      <span><input type="text" id="email" name="folderName" value="folder"></span></br>
+      <span><input type="text" id="folderName4" name="folderName" value="folder"></span></br>
         
       <span class="back"><button id="back4">Back</button></span>
       <span class="create"><button id="create4">Create Folder</button></span>

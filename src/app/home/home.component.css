@@ -669,13 +669,13 @@ select::-ms-expand{
 }
 
 
-@media only screen and (min-width: 415px) {
+@media only screen and (min-width: 481px) {
 	.Phone{
 		display: none;
 	}
 }
 
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 480px) and (max-height: 916px){
 	.Phone{
 		display: block;
 	}
@@ -1193,6 +1193,67 @@ select::-ms-expand{
 		border-bottom:none;
 		margin-left:2%;
 		margin:2.5%;
+	}
+
+	@media only screen and (max-width: 360px) and (max-height: 640px) {
+		.search-bar{
+			width: 115%;
+		}
+		
+		.compose button{
+			bottom:-10px;
+			right:-80px;
+		}
+		
+		.modal-content{
+			height: 60%;
+		}
+		
+		.modal-content1,
+		.modal-content4{
+			height: 70%;
+		}
+		
+		.modal-content2,
+		.modal-content3{
+			height: 90%;
+		}
+
+		.back button,
+		.create button{
+			margin-top:20%;
+		}
+	}
+	
+	
+	@media only screen and (max-width: 376px) and (max-height: 668px) {
+		.search-bar{
+			width: 110%;
+		}
+		
+		.compose button{
+			bottom:10px;
+			right:-55px;
+		}
+		
+		.modal-content{
+			height: 60%;
+		}
+		
+		.modal-content1,
+		.modal-content4{
+			height: 70%;
+		}
+		
+		.modal-content2,
+		.modal-content3{
+			height: 90%;
+		}
+
+		.back button,
+		.create button{
+			margin-top:20%;
+		}
 	}
 
 }

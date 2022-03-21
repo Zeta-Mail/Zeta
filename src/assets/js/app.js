@@ -71,10 +71,10 @@ filter.onclick = function() {
 
 var filterO = document.getElementById("FilterO");
 
-var from = document.getElementById("From");
-var content = document.getElementById("Content");
-var subject = document.getElementById("Subject");
-var domain = document.getElementById("Domain");
+var from = document.getElementById("FromPh");
+var content = document.getElementById("ContentPh");
+var subject = document.getElementById("SubjectPh");
+var domain = document.getElementById("DomainPh");
 
 
 var back1 = document.getElementById("back1");
