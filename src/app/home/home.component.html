@@ -206,3 +206,299 @@
 
 </div>
 
+<div class = "Phone">
+  <div id="myNav_1" class="overlay close">
+    <div class="logo-details">
+      <i class='bx bx-mail-send'></i>
+      <span class="logo_name">Zeta</span>
+    </div>
+    
+    <ul class="nav-links">
+      <hr>
+      
+      <li>
+        <a href="#">
+          <i class='bx bxs-inbox'></i>
+          <span class="link_name">Inbox</span>
+        </a>
+      </li>
+      
+      <hr>
+    
+      <li class="Primary">
+        <a href="#">
+          <i class='bx bx-mail-send'></i>
+          <span class="link_name">Primary</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="#">
+          <i class='bx bxs-user-badge'></i>
+          <span class="link_name">Social</span>
+        </a>
+      </li>
+    
+      <hr>
+    
+      <li class="From">
+        <a href="#">
+          <i class='bx bxs-user-detail'></i>
+          <span class="link_name">From</span>
+        </a>
+      </li>
+    
+      <li class="Subject">
+        <a href="#">
+          <i class='bx bx-file-blank'></i>
+          <span class="link_name">Subject</span>
+        </a>
+      </li>
+      
+      <li class="Domain">
+        <a href="#">
+          <i class='bx bx-message-rounded-dots'></i>
+          <span class="link_name">Domain</span>
+        </a>
+      </li>
+      
+      <li class="Content">
+        <a href="#">
+          <i class='bx bxs-book-content'></i>
+          <span class="link_name">Content</span>
+        </a>
+      </li>
+      
+      <hr>
+
+      <li>
+        <a href="#">
+          <i class='bx bxs-star'></i>
+          <span class="link_name">Starred</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="#">
+          <i class='bx bxs-bookmark'></i>
+          <span class="link_name">Important</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="#">
+          <i class='bx bxs-navigation'></i>
+          <span class="link_name">Sent</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="#">
+          <i class='bx bxs-error-alt'></i>
+          <span class="link_name">Spam</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="#">
+          <i class='bx bxs-trash'></i>
+          <span class="link_name">Trash</span>
+        </a>
+      </li>
+      
+      <li>
+        <button onclick="creating()">
+          <i class='bx bxs-file' ></i>
+          <span class="link_name">Create Folder</span>
+        </button>
+      </li>
+    
+      <li>
+        <a href="#">
+          <i class='bx bxs-folder'></i>
+          <span class="link_name">View Folders</span>
+        </a>
+      </li>
+      
+      <hr>
+    
+      <li class="mode">
+        <div class="sun-moon">
+          <i class='bx bxs-sun sun'></i>
+          <i class='bx bxs-moon moon'></i>
+          
+          <div class="toggle-switch">
+            <span class="switch"></span>
+          </div>
+        </div>
+      </li>
+      
+      <hr>
+    
+      <li>
+        <button onclick="settingsWindow()">
+          <i class='bx bxs-cog'></i>
+          <span class="link_name">Settings</span>
+        </button>
+      </li>
+    
+      <li>
+        <a href="login.php">
+          <i class='bx bx-log-out'></i>
+          <span class="link_name">Logout</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+    
+    
+  <section class="home-section">
+    <div class="home-content">
+      <div onclick="openNav_1()"><i class='bx bx-menu'></i></div>
+      
+      <div class="boxContainer">
+        <form action="" class="search-bar">
+          <button type="submit"><i class='bx bx-search'></i></button>
+          <input type="text" placeholder="Search" name="q">
+        </form>
+      </div>
+    </div>
+    
+    <div class="compose"><button><p><i class='bx bxs-pencil'></i></button></div>
+    
+  </section>
+  
+  <!-------------------------Dialog Box----------------------------->
+  
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span onclick="closing()" class="close">&times;</span>
+      <div class="textfilter">Select a Filter</div>
+      
+      <div class="Filter"><button id="Filter">&nbsp;&nbsp;Filter By <i class='bx bxs-chevron-down arrow' ></i><hr></button></div>
+      
+      <div id="FilterO" class="FilterO">
+        <div id="From" class="FilterOptions"><button>&nbsp;&nbsp;From</button></div>
+        <div id="Content" class="FilterOptions"><button>&nbsp;&nbsp;Content</button></div>
+        <div id="Subject" class="FilterOptions"><button>&nbsp;&nbsp;Subject</button></div>
+        <div id="Domain" class="FilterOptions"><button>&nbsp;&nbsp;Domain</button></div>
+      </div>
+     
+    </div>
+
+  </div>
+
+  <!-- From -->
+
+  <div id="myModal1" class="modal1">
+
+    <!-- Modal content -->
+    <div class="modal-content1">
+      <span class="close1">&times;</span>
+      <div class="textfilter">Enter Sender's Email Address</div>
+      <span><input type="email" id="email" name="email" value="example@gmail.com"></span>
+
+      <div class="textfilter">Enter Folder Name</div>
+      <span><input type="text" id="email" name="folderName" value="folder"></span></br>
+        
+      <span class="back"><button id="back1">Back</button></span>
+      <span class="create"><button id="create1">Create Folder</button></span>
+    </div>
+     
+  </div>
+
+  
+
+  <!-- Content -->
+
+  <div id="myModal2" class="modal2">
+
+    <!-- Modal content -->
+    <div class="modal-content2">
+      <span class="close2">&times;</span>
+      <div class="textfilter">Includes the words</div>
+      <span><input type="text" id="words" name="words" value="separate using a comma"></span>
+
+      <div class="textfilter">Doesn't Include the words</div>
+      <span><input type="text" id="nowords" name="nowords" value="separate using a comma"></span>
+        
+      <div class="textfilter">Enter Folder Name</div>
+      <span><input type="text" id="email" name="folderName" value="folder"></span>
+        
+      </br>
+        
+      <span class="back"><button id="back2">Back</button></span>
+      <span class="create"><button id="create2">Create Folder</button></span>
+    </div>
+
+  </div>
+
+
+  <!-- Subject -->
+
+  <div id="myModal3" class="modal3">
+
+    <!-- Modal content -->
+    <div class="modal-content3">
+      <span class="close3">&times;</span>
+      <div class="textfilter">Enter the subject</div>
+      <span><input type="text" id="subject" name="subject" value=""></span>
+
+      <div class="textfilter">Enter Keywords</div>
+      <span><input type="text" id="nowords" name="nowords" value="separate using a comma"></span>
+        
+      <div class="textfilter">Enter Folder Name</div>
+      <span><input type="text" id="email" name="folderName" value="folder"></span>
+        
+      </br>
+        
+      <span class="back"><button id="back3">Back</button></span>
+      <span class="create"><button id="create3">Create Folder</button></span>
+    </div>
+
+  </div>
+
+
+  <!-- Domain -->
+
+  <div id="myModal4" class="modal4">
+
+    <!-- Modal content -->
+    <div class="modal-content4">
+      <span class="close4">&times;</span>
+      <div class="textfilter">Enter Domain name</div>
+      <span><input type="text" id="domain" name="domain" value="com/org/lk"></span>
+
+      <div class="textfilter">Enter Folder Name</div>
+      <span><input type="text" id="email" name="folderName" value="folder"></span></br>
+        
+      <span class="back"><button id="back4">Back</button></span>
+      <span class="create"><button id="create4">Create Folder</button></span>
+    </div>
+
+  </div>
+  
+  
+  <!--------------------------------------------------------------------------------------------->
+  
+  <!--------------------------------------Settings Overlay--------------------------------------->
+  
+  <div class="settingsOverlay">
+
+    <button class="backButton" onclick="settingsWindowClose()"><i class='bx bxs-chevron-left arrow' ></i></button>
+
+    <hr>
+    <a href="#"><span class="settings_links">Send Us Feedback</span></a>
+    <hr>
+    <a href="#"><span class="settings_links">About Us</span></a>
+    <hr>
+    <a href="#"><span class="settings_links">Privacy</span></a>
+    <hr>
+
+  </div>
+    
+</div>
+
