@@ -1,34 +1,37 @@
 import { Component, OnInit } from '@angular/core';
-declare const myFun:any;
-declare const changeTheme:any;
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  Primary:boolean=true;
-  From:boolean=true;
+  showMenu: boolean = true;
+  showMore: boolean = false;
+  Primary: boolean = true;
+  From: boolean = true;
   Domain:boolean=true;
   Content:boolean=true;
-  visible_primary:boolean=false;
-  visible_from:boolean=false;
-  visible_content:boolean=false;
-  visible_domain:boolean=false;
+  visible_primary: boolean = false;
+  visible_from: boolean = false;
+  visible_content=false;
+  visible_domain=false;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
-    this.callfun();
-    this.callChangeTheme();
-    this.onClickPrimary()
-  }
-  callfun(){
-    myFun();
+
+
   }
 
-  callChangeTheme(){
-    changeTheme();
+
+  toogleMenu() {
+    this.showMenu = !this.showMenu
+  }
+
+  toogleMore() {
+    this.showMore = !this.showMore
   }
 
   onClickPrimary(){
@@ -41,11 +44,9 @@ export class HomeComponent implements OnInit {
   }
 
   onClickFrom(){
-    this.visible_primary=false;
-    this.visible_content=false;
-    this.visible_domain=false;
-    this.From=!this.From;
-    this.visible_from=!this.visible_from;
+
+    this.From=false;
+    this.visible_from=true;
   }
 
   onClickContent(){
@@ -65,3 +66,6 @@ export class HomeComponent implements OnInit {
   }
 
 }
+
+
+
