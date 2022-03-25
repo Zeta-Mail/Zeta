@@ -33,56 +33,20 @@
         <p>Compose</p>
       </button>
 
-      <div class="sidebarOption sidebarOption_active">
-        <span class="material-icons">inbox</span>
+      <div class="sidebarOption sidebarOption_active"(click)="toggleInbox()">
+        <span class="material-icons" >inbox</span>
         <h3>Inbox</h3>
       </div>
 
-      <div class="sidebarOption">
+      <div class="sidebarOption"(click)="toggleStared()">
         <span class="material-icons">star</span>
         <h3>Stared</h3>
       </div>
 
-      <div class="sidebarOption">
-        <span class="material-icons">report</span>
+      <div class="sidebarOption"(click)="toggleSpam()">
+        <span class="material-icons" >report</span>
         <h3>Spam</h3>
       </div>
-
-      <!--    <div class="sidebarOption">-->
-      <!--      <span class="material-icons">label_important</span>-->
-      <!--      <h3>Important</h3>-->
-      <!--    </div>-->
-
-      <!--    <div class="sidebarOption">-->
-      <!--      <span class="material-icons">near_me</span>-->
-      <!--      <h3>Sent</h3>-->
-      <!--    </div>-->
-
-      <!--    <div class="sidebarOption">-->
-      <!--      <span class="material-icons">note</span>-->
-      <!--      <h3>Drafts</h3>-->
-      <!--    </div>-->
-
-      <!--    <div class="sidebarOption"(click)="toogleMore()">-->
-      <!--      <span class="material-icons">expand_more</span>-->
-      <!--      <h3>More</h3>-->
-      <!--    </div>-->
-
-      <!--    <div class="sidebarOption" *ngIf="showMore">-->
-      <!--      <span class="material-icons">expand_more</span>-->
-      <!--      <h3>File1</h3>-->
-      <!--    </div>-->
-
-      <!--    <div class="sidebarOption" *ngIf="showMore">-->
-      <!--      <span class="material-icons">expand_more</span>-->
-      <!--      <h3>File2</h3>-->
-      <!--    </div>-->
-
-      <!--    <div class="sidebarOption">-->
-      <!--      <span class="material-icons">expand_more</span>-->
-      <!--      <h3>File3</h3>-->
-      <!--    </div>-->
-
 
       <div class="sidebar_footer">
         <div class="sidebar_footer_Icons">
@@ -116,63 +80,120 @@
           <span class="material-icons">settings</span>
         </div>
       </div>
+      <div class="inboxMails" *ngIf="showInbox">
+        <div class="emailRow">
+          <div class="emailRow_options">
+            <input type="checkbox"/>
+            <span class="material-icons">star_border</span>
+            <span class="material-icons">label_important</span>
+          </div>
+          <div class="emailRow_title">Facebook</div>
+          <div class="emailRow_message"><h4>You have new friend request <span class="emailRow_description">
+          Add this person to your friend list.
+        </span></h4></div>
+          <div class="emailRow_time">10pm</div>
+        </div>
+        <!--      2-->
+        <div class="emailRow">
+          <div class="emailRow_options">
+            <input type="checkbox"/>
+            <span class="material-icons">star_border</span>
+            <span class="material-icons">label_important</span>
+          </div>
+          <div class="emailRow_title">Facebook</div>
+          <div class="emailRow_message"><h4>You have new friend request <span class="emailRow_description">
+          Add this person to your friend list.
+        </span></h4></div>
+          <div class="emailRow_time">10pm</div>
+        </div>
+        <!--      3-->
+        <div class="emailRow">
+          <div class="emailRow_options">
+            <input type="checkbox"/>
+            <span class="material-icons">star_border</span>
+            <span class="material-icons">label_important</span>
+          </div>
+          <div class="emailRow_title">Facebook</div>
+          <div class="emailRow_message"><h4>You have new friend request <span class="emailRow_description">
+          Add this person to your friend list.
+        </span></h4></div>
+          <div class="emailRow_time">10pm</div>
+        </div>
+        <!--      4-->
+        <div class="emailRow">
+          <div class="emailRow_options">
+            <input type="checkbox"/>
+            <span class="material-icons">star_border</span>
+            <span class="material-icons">label_important</span>
+          </div>
+          <div class="emailRow_title">Facebook</div>
+          <div class="emailRow_message"><h4>You have new friend request <span class="emailRow_description">
+          Add this person to your friend list.
+        </span></h4></div>
+          <div class="emailRow_time">10pm</div>
+        </div>
+      </div>
+      <div class="spamMails" *ngIf="showSpam">
+        <div class="emailRow">
+          <div class="emailRow_options">
+            <input type="checkbox"/>
+            <span class="material-icons">star_border</span>
+            <span class="material-icons">label_important</span>
+          </div>
+          <div class="emailRow_title">Ebay</div>
+          <div class="emailRow_message"><h4>You have new friend request <span class="emailRow_description">
+          Add this person to your friend list.
+        </span></h4></div>
+          <div class="emailRow_time">10pm</div>
+        </div>
+        <!--      2-->
+        <div class="emailRow">
+          <div class="emailRow_options">
+            <input type="checkbox"/>
+            <span class="material-icons">star_border</span>
+            <span class="material-icons">label_important</span>
+          </div>
+          <div class="emailRow_title">Alibaba</div>
+          <div class="emailRow_message"><h4>You have new friend request <span class="emailRow_description">
+          Add this person to your friend list.
+        </span></h4></div>
+          <div class="emailRow_time">10pm</div>
+        </div>
 
-      <div class="emailRow">
-        <div class="emailRow_options">
-          <input type="checkbox"/>
-          <span class="material-icons">star_border</span>
-          <span class="material-icons">label_important</span>
-        </div>
-        <div class="emailRow_title">Facebook</div>
-        <div class="emailRow_message"><h4>You have new friend request <span class="emailRow_description">
+      </div>
+      <div class="staredMails" *ngIf="showStared">
+        <div class="emailRow">
+          <div class="emailRow_options">
+            <input type="checkbox"/>
+            <span class="material-icons">star_border</span>
+            <span class="material-icons">label_important</span>
+          </div>
+          <div class="emailRow_title">IIT</div>
+          <div class="emailRow_message"><h4>You have new friend request <span class="emailRow_description">
           Add this person to your friend list.
         </span></h4></div>
-        <div class="emailRow_time">10pm</div>
-      </div>
-      <!--      2-->
-      <div class="emailRow">
-        <div class="emailRow_options">
-          <input type="checkbox"/>
-          <span class="material-icons">star_border</span>
-          <span class="material-icons">label_important</span>
+          <div class="emailRow_time">10pm</div>
         </div>
-        <div class="emailRow_title">Facebook</div>
-        <div class="emailRow_message"><h4>You have new friend request <span class="emailRow_description">
+        <!--      2-->
+        <div class="emailRow">
+          <div class="emailRow_options">
+            <input type="checkbox"/>
+            <span class="material-icons">star_border</span>
+            <span class="material-icons">label_important</span>
+          </div>
+          <div class="emailRow_title">UoW</div>
+          <div class="emailRow_message"><h4>You have new friend request <span class="emailRow_description">
           Add this person to your friend list.
         </span></h4></div>
-        <div class="emailRow_time">10pm</div>
-      </div>
-      <!--      3-->
-      <div class="emailRow">
-        <div class="emailRow_options">
-          <input type="checkbox"/>
-          <span class="material-icons">star_border</span>
-          <span class="material-icons">label_important</span>
+          <div class="emailRow_time">10pm</div>
         </div>
-        <div class="emailRow_title">Facebook</div>
-        <div class="emailRow_message"><h4>You have new friend request <span class="emailRow_description">
-          Add this person to your friend list.
-        </span></h4></div>
-        <div class="emailRow_time">10pm</div>
+
       </div>
-      <!--      4-->
-      <div class="emailRow">
-        <div class="emailRow_options">
-          <input type="checkbox"/>
-          <span class="material-icons">star_border</span>
-          <span class="material-icons">label_important</span>
-        </div>
-        <div class="emailRow_title">Facebook</div>
-        <div class="emailRow_message"><h4>You have new friend request <span class="emailRow_description">
-          Add this person to your friend list.
-        </span></h4></div>
-        <div class="emailRow_time">10pm</div>
-      </div>
-      <!--      Email Row End-->
-    </div>
+
     <!--    Email List Row End-->
   </div>
   <!--  Email List End-->
   <!--Main Body End-->
+</div>
 </div>
 
