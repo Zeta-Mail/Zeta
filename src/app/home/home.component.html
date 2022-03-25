@@ -1,160 +1,122 @@
 <!--Google icons-->
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 <!--Header Start-->
-<div class="header">
-  <div class="header_left">
-    <span class="material-icons menu_icon" (click)="toogleMenu()">menu</span>
-    <img src="./assets/logo.png" alt="logo">
+<div class="big-device">
+  <div class="header">
+    <div class="header_left">
+      <span class="material-icons menu_icon" (click)="toogleMenu()">menu</span>
+      <img src="./assets/logo.png" alt="logo">
+    </div>
+
+    <div class="header_middle">
+      <span class="material-icons">search</span>
+      <input type="text" placeholder="Search">
+      <span class="material-icons">arrow_drop_down</span>
+
+    </div>
+
+    <div class="header_right">
+      <span class="material-icons">apps</span>
+      <span class="material-icons">notifications</span>
+      <span class="material-icons">account_circle</span>
+    </div>
   </div>
+  <!--Header End-->
 
-  <div class="header_middle">
-    <span class="material-icons">search</span>
-    <input type="text" placeholder="Search">
-    <span class="material-icons">arrow_drop_down</span>
-  </div>
+  <!--Main Body Start-->
+  <div class="main_body">
+    <!--  Sidebar Start-->
+    <div class="sidebar" *ngIf="showMenu" id="sidebar">
+      <button class="sidebar_compose">
+        <span class="material-icons">add</span>
+        <p>Compose</p>
+      </button>
 
-  <div class="header_right">
-    <span class="material-icons">apps</span>
-    <span class="material-icons">notifications</span>
-    <span class="material-icons">account_circle</span>
-  </div>
-</div>
-<!--Header End-->
-
-<!--Main Body Start-->
-<div class="main_body">
-<!--  Sidebar Start-->
-  <div class="sidebar" *ngIf="showMenu" id="sidebar">
-    <button class="sidebar_compose">
-      <span class="material-icons">add</span>
-      Compose
-    </button>
-
-    <div class="sidebarOption sidebarOption_active">
-      <span class="material-icons">inbox</span>
-      <h3>Inbox</h3>
-    </div>
-
-    <div class="sidebarOption">
-      <span class="material-icons">star</span>
-      <h3>Stared</h3>
-    </div>
-
-    <div class="sidebarOption">
-      <span class="material-icons">access_time</span>
-      <h3>Snoozed</h3>
-    </div>
-
-    <div class="sidebarOption">
-      <span class="material-icons">label_important</span>
-      <h3>Important</h3>
-    </div>
-
-    <div class="sidebarOption">
-      <span class="material-icons">near_me</span>
-      <h3>Sent</h3>
-    </div>
-
-    <div class="sidebarOption">
-      <span class="material-icons">note</span>
-      <h3>Drafts</h3>
-    </div>
-
-    <div class="sidebarOption"(click)="toogleMore()">
-      <span class="material-icons">expand_more</span>
-      <h3>More</h3>
-    </div>
-
-    <div class="sidebarOption" *ngIf="showMore">
-      <span class="material-icons">expand_more</span>
-      <h3>File1</h3>
-    </div>
-
-    <div class="sidebarOption" *ngIf="showMore">
-      <span class="material-icons">expand_more</span>
-      <h3>File2</h3>
-    </div>
-
-    <div class="sidebarOption">
-      <span class="material-icons">expand_more</span>
-      <h3>File3</h3>
-    </div>
-
-
-    <div class="sidebar_footer">
-      <div class="sidebar_footer_Icons">
-        <span class="material-icons">person</span>
-        <span class="material-icons">duo</span>
-        <span class="material-icons">phone</span>
-      </div>
-    </div>
-
-  </div>
-<!--  Sidebar End-->
-
-<!--  Email List Start-->
-  <div class="emaillist">
-<!--    Setting Start-->
-    <div class="emaillist_setting">
-      <div class="emaillist_settingsleft">
-        <input type="checkbox">
-        <span class="material-icons">arrow_drop_down</span>
-        <span class="material-icons">redo</span>
-        <span class="material-icons">more_vert</span>
-      </div>
-
-      <div class="emaillist_settingsright">
-        <span class="material-icons">chevron_left</span>
-        <span class="material-icons">chevron_right</span>
-        <span class="material-icons">keyboard_hide</span>
-        <span class="material-icons">settings</span>
-      </div>
-    </div>
-<!--    Setting End-->
-
-<!--    Section Start-->
-    <div class="emaillist_section">
-      <div class="section section_selected">
+      <div class="sidebarOption sidebarOption_active">
         <span class="material-icons">inbox</span>
-        <h4>Primary</h4>
+        <h3>Inbox</h3>
       </div>
 
-      <div class="section"(click)="onClickFrom()">
-        <span class="material-icons" >people</span>
-        <h4>From</h4>
+      <div class="sidebarOption">
+        <span class="material-icons">star</span>
+        <h3>Stared</h3>
       </div>
 
-      <div class="section">
-        <span class="material-icons">local_offer</span>
-        <h4>Content</h4>
+      <div class="sidebarOption">
+        <span class="material-icons">report</span>
+        <h3>Spam</h3>
       </div>
 
-      <div class="section">
-        <span class="material-icons">local_offer</span>
-        <h4>Domain</h4>
+      <!--    <div class="sidebarOption">-->
+      <!--      <span class="material-icons">label_important</span>-->
+      <!--      <h3>Important</h3>-->
+      <!--    </div>-->
+
+      <!--    <div class="sidebarOption">-->
+      <!--      <span class="material-icons">near_me</span>-->
+      <!--      <h3>Sent</h3>-->
+      <!--    </div>-->
+
+      <!--    <div class="sidebarOption">-->
+      <!--      <span class="material-icons">note</span>-->
+      <!--      <h3>Drafts</h3>-->
+      <!--    </div>-->
+
+      <!--    <div class="sidebarOption"(click)="toogleMore()">-->
+      <!--      <span class="material-icons">expand_more</span>-->
+      <!--      <h3>More</h3>-->
+      <!--    </div>-->
+
+      <!--    <div class="sidebarOption" *ngIf="showMore">-->
+      <!--      <span class="material-icons">expand_more</span>-->
+      <!--      <h3>File1</h3>-->
+      <!--    </div>-->
+
+      <!--    <div class="sidebarOption" *ngIf="showMore">-->
+      <!--      <span class="material-icons">expand_more</span>-->
+      <!--      <h3>File2</h3>-->
+      <!--    </div>-->
+
+      <!--    <div class="sidebarOption">-->
+      <!--      <span class="material-icons">expand_more</span>-->
+      <!--      <h3>File3</h3>-->
+      <!--    </div>-->
+
+
+      <div class="sidebar_footer">
+        <div class="sidebar_footer_Icons">
+          <span class="material-icons">person</span>
+          <span class="material-icons">duo</span>
+          <span class="material-icons">phone</span>
+        </div>
       </div>
 
-      <div class="section">
-        <span class="material-icons">local_offer</span>
-        <h4>Subject</h4>
-      </div>
     </div>
-<!--    Section End-->
+    <!--  Sidebar End-->
 
-<!--    Email List Row Start-->
-    <div class="emaillist_list">
-      <!--        =======================From==================-->
-      <ng-container *ngIf="visible_from">
-        <div class="details-box">
-          <h4 class="fromText">Enter Sender's Email Address</h4>
-          <input class="fromInput" placeholder="example@gmail.com" type="text">
-          <h4 class="fromText">Enter Folder Name</h4>
-          <input class="fromInput" placeholder="Folder" type="text">
-          <button class="nextGoBtn">Create Folder<i class='bx bxs-right-arrow'></i></button>
+    <!--  Email List Start-->
+    <div class="emaillist">
+      <!--    Setting Start-->
+      <div class="emaillist_setting">
+        <div class="emaillist_settingsleft">
+          <input type="checkbox">
+          <span class="material-icons" (click)="toogleMore()">arrow_drop_down</span>
+          <div class="sidebarOption" *ngIf="showMore">
+            <input type="checkbox">
+            <h6>Delete</h6>
+          </div>
+          <span class="material-icons">redo</span>
+          <span class="material-icons">more_vert</span>
         </div>
-      </ng-container>
 
-<!--      Email Row Start-->
+        <div class="emaillist_settingsright">
+          <span class="material-icons">chevron_left</span>
+          <span class="material-icons">chevron_right</span>
+          <span class="material-icons">settings</span>
+        </div>
+      </div>
+
       <div class="emailRow">
         <div class="emailRow_options">
           <input type="checkbox"/>
@@ -167,7 +129,7 @@
         </span></h4></div>
         <div class="emailRow_time">10pm</div>
       </div>
-<!--      2-->
+      <!--      2-->
       <div class="emailRow">
         <div class="emailRow_options">
           <input type="checkbox"/>
@@ -180,7 +142,7 @@
         </span></h4></div>
         <div class="emailRow_time">10pm</div>
       </div>
-<!--      3-->
+      <!--      3-->
       <div class="emailRow">
         <div class="emailRow_options">
           <input type="checkbox"/>
@@ -193,7 +155,7 @@
         </span></h4></div>
         <div class="emailRow_time">10pm</div>
       </div>
-<!--      4-->
+      <!--      4-->
       <div class="emailRow">
         <div class="emailRow_options">
           <input type="checkbox"/>
@@ -206,10 +168,11 @@
         </span></h4></div>
         <div class="emailRow_time">10pm</div>
       </div>
-<!--      Email Row End-->
+      <!--      Email Row End-->
     </div>
-<!--    Email List Row End-->
+    <!--    Email List Row End-->
   </div>
-<!--  Email List End-->
+  <!--  Email List End-->
+  <!--Main Body End-->
 </div>
-<!--Main Body End-->
+
