@@ -258,3 +258,18 @@ body{
   border-top: 1px solid whitesmoke;
   box-shadow: 0 4px 4px -2px rgba(0,0,0,0.24);
 }
+@media screen and (max-width: 540px){
+  .sidebar {
+    flex: 0.5;
+    max-width: 400px;
+    padding-right: 20px;
+  }
+
+}
+@media screen and (max-width: 300px){
+  .sidebar {
+    flex: 1;
+    max-width: 700px;
+    padding-right: 20px;
+  }
+}
