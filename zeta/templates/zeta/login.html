@@ -1,0 +1,50 @@
+{% extends "zeta/layout.html" %}
+
+{% block body %}
+
+<img class='background-img' src="https://www.andreialecu.ro/images/journal/color-psychology.jpg" />
+<div class='card-wrapper'>
+    <h1 class='call-to-action'>Login</h1>
+    {% if message %}
+    <div class="message">{{ message }}</div>
+    {% endif %}
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <div class='field'>
+            <label for='username'>Username</label><br>
+            <i class='bx bx-user'></i>
+            <input required type='text' id='username' name='username' placeholder='Type your username' ,
+                spellcheck='false' />
+        </div>
+        <div class='field'>
+            <label for='pwd' name='pwd'>Password</label><br>
+            <i class='bx bx-lock-alt'></i>
+            <input required type='password' id='pwd' name='password' placeholder='Type your password' />
+        </div>
+        <a href=''><span>Forgot password?</span></a>
+        <input type='submit' id='login-button' value="Log in" />
+        <div class="g-signin2" data-theme="light" data-width="350" data-height="50" data-longtitle="true" data-onsuccess="onSignIn"></div>
+    </form>
+
+    <div class='SignUp'>
+        Haven't registered yet? <a href="{% url 'register' %}">Create an Account.</a>
+    </div>
+</div>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        padding: 0%;
+    }
+
+    .g-signin2 {
+        width: 100%;
+    }
+</style>
+
+
+{% endblock %}

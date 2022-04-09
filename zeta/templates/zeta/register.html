@@ -1,0 +1,133 @@
+{% extends "zeta/layout.html" %}
+
+{% block body %}
+
+<img class='background-img' src="https://dixit-audio.fr/wp-content/uploads/2020/09/3550399-scaled.jpg" />
+<div class='card-wrapper'>
+    <h1 class='call-to-action'>Sign Up</h1>
+    {% if message %}
+    <div class="message">{{ message }}</div>
+    {% endif %}
+    <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        <div class='field'>
+            <label for='username'>Username</label><br>
+            <i class='bx bx-user'></i>
+            <input required type='text' id='username' name='username' placeholder='Type your username' , spellcheck='false' />
+        </div>
+        <div class='field'>
+            <label for='email'>Email</label><br>
+            <i class='bx bx-envelope'></i>
+            <input required type='email' id='email' name='email' placeholder='Type your email' />
+        </div>
+        <div class="passwds">
+            <div class='passwd'>
+                <label for='pwd' name='pwd'>Password</label><br>
+                <i class='bx bx-lock-alt'></i>
+                <input required type='password' id='pwd' name='password' placeholder='Type your password' />
+            </div>
+            <div class='passwd'>
+                <label for='conf_pwd' name='conf_pwd'>Confirm Password</label><br>
+                <i class='bx bx-lock-alt'></i>
+                <input required type='password' id='conf_pwd' name="confirmation" placeholder='Confirm your password' />
+            </div>
+        </div>
+        <input type='submit' id='login-button' value="Register" />
+    </form>
+
+    <div class='SignUp'>
+        Already have an account? <a href="{% url 'login' %}">Log In.</a>
+    </div>
+</div>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        padding: 0%;
+    }
+
+    .card-wrapper {
+        min-width: 700px;
+        margin-top: 8%;
+    }
+
+    .card-wrapper form .passwds{
+        display: flex;
+    }
+
+    .card-wrapper form .field label {
+        margin-bottom: 10px;
+    }
+
+    .card-wrapper form .passwds .passwd {
+    width: 50%;
+    position: relative;
+    font-size: 18px;
+    padding: 7px 30px;
+    white-space: no-wrap;
+}
+
+.card-wrapper form .passwds .passwd::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+    height: 1px;
+    width: 70%;
+    padding-top: 5px;
+    border-top: 1px solid rgba(18, 18, 18, 0.6);
+}
+
+
+
+.card-wrapper form .passwds .passwd i {
+    font-size: 22px;
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.card-wrapper form .passwds .passwd label {
+    width: 100%;
+    font-size: 17px;
+    margin-bottom: 20px;
+    line-height: 30px;
+}
+
+.card-wrapper form .passwds .passwd input {
+    border: 0;
+    background: transparent;
+    padding: 0 5px;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    height: 30px;
+    width: calc(100% - 50px);
+    vertical-align: middle;
+}
+
+.card-wrapper form .passwds .passwd input:focus {
+    outline: none;
+}
+
+.card-wrapper form .passwds .passwd input::placeholder {
+    color: rgba(18, 18, 18, 0.7);
+}
+
+#login-button {
+    width: 85%;
+
+}
+
+.SignUp {
+    padding: 10px 0;
+}
+
+</style>
+{% endblock %}
