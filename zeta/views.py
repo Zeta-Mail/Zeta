@@ -11,8 +11,18 @@ from .models import User
 def index(request):
         return render(request, "zeta/index.html")
 
+def home(request):
+        return render(request, "zeta/home.html")
+
+
 def email_body(request):
         return render(request, "zeta/email_body.html")
+
+def privacy_page(request):
+        return render(request, "zeta/privacy_page.html")
+
+def about_us(request):
+        return render(request, "zeta/about_us.html")
 
 def login_view(request):
 

@@ -1,0 +1,381 @@
+{% extends "zeta/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+    *{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    body{
+        font-family: 'Playfair Display', serif;
+        display: grid;
+        background-color: #4158D0;
+        background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+
+        align-content: center;
+        min-height: 100vh;
+
+    }
+    ul {
+        list-style-type: none;
+        color: #eec625;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color:  #333;
+    }
+    ul.a{
+        color: #000000;
+
+
+    }
+
+    li {
+        float: right;
+    }
+
+    li a {
+        display: block;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        background-color: #111;
+    }
+
+
+    section{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 70vh;
+        width: 75vw;
+        margin: 0 auto;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 12px
+    }
+    .image{
+        background-color: #12192c;
+        display: flex;
+        border-radius: 12px 0 0 12px;
+    }
+    .image img{
+        height:50vh;
+        margin:50px auto
+    }
+    .content{
+        background-color: #12192c;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 0  12px 12px 0;
+        color: #fff;
+    }
+    .content h2{
+        text-transform: uppercase;
+        font-size: 36px;
+        letter-spacing: 6px;
+        opacity: 0.9;
+    }
+    .content span{
+        height: 0.5px;
+        width: 80px;
+        background: #777;
+        margin: 30px 0;
+    }
+    .content p{
+        padding-bottom: 15px;
+        font-weight: 300;
+        opacity: 0.7;
+        width: 60%;
+        text-align: center;
+        margin: 0 auto;
+        line-height: 1.7;
+        color: white;
+        font-family:"Lato", sans-serif;
+
+    }
+
+    .content h5{
+        color: rgb(16, 73, 21);
+
+    }
+    .links{
+        margin: 15px 0;
+    }
+    .links li{
+        border: 2px solid #4158D0;
+        list-style: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        width: 160px;
+        text-align: center;
+    }
+    .links li a{
+        text-transform: uppercase;
+        color: #fff;
+        text-decoration: none;
+    }
+    .links li:hover{
+        border-color: #C850C0;
+    }
+
+    .vertical-line{
+        height: 30px;
+        width: 3px;
+        background: #C850C0;
+        margin: 0 auto;
+    }
+    .icons{
+        display: flex;
+        padding: 15px 0;
+    }
+    .icons li{
+        display: block;
+        padding: 5px;
+        margin: 5px;
+    }
+    .icons li i{
+        font-size: 26px;
+        opacity: 0.8;
+    }
+    .icons li i:hover{
+        color: #C850C0;
+        cursor: pointer;
+    }
+
+
+    /*****************/
+
+    @media(max-width: 900px){
+        section{
+            grid-template-columns: 1fr;
+            width: 100%;
+            border-radius: none;
+        }
+        .image{
+            height: 100vh;
+            border-radius: none;
+        }
+        .content{
+            height: 100vh;
+            border-radius: none;
+        }
+        .content h2{
+            font-size: 20px;
+            margin-top: 50px;
+        }
+        .content span{
+            margin: 20px 0;
+        }
+        .content p{
+            font-size: 14px;
+        }
+        .links li a{
+            font-size: 14px;
+        }
+        .links{
+            margin: 5px 0;
+        }
+        .links li{
+            padding: 6px 10px;
+        }
+        .icons li i{
+            font-size: 15px;
+        }
+    }
+    .credit{
+        text-align: center;
+        color: #000;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .credit a{
+        text-decoration: none;
+        color:#000;
+        font-weight: bold;
+    }
+    .row {
+        display: flex;
+    }
+
+    .column {
+        flex: 33.33%;
+        padding: 5px;
+    }
+    div.a{
+        text-align: center;
+    }
+
+</style>
+
+
+<ul>
+    <marquee style ="font-size: 25px;"> ZETA</marquee>
+    <li><a class="active" href="#home">Other</a></li>
+    <li><a href="#privacy">Privacy</a></li>
+    <li><a href="#about us">About US</a></li>
+</ul>
+
+
+<div id ="about us">
+    <div class = "content">
+        <h2>About Us</h2>
+        <span><!-- line here --></span>
+
+        <div class="row">
+            <div class="column">
+                <img src="download.jpg" alt="Snow" style="width:200px;height:215px;border-radius:50%"><br>
+                <div class="a">
+                    Nadun<br>
+                    Team Role
+                </div>
+            </div>
+            <div class="column">
+                <img src="download1.jpg" alt="Forest" style="width:200px;height:215px;border-radius:50%"><br>
+                <div class="a">
+                    Sachini<br>
+                    Team Role
+                </div>
+            </div>
+            <div class="column">
+                <img src="download2.jpg" alt="Mountains" style="width:200px;height:215px;border-radius:50%"><br>
+                <div class="a">
+                    Nisini<br>
+                    Team Role
+                </div>
+            </div>
+            <div class="column">
+                <img src="download3.jpg" alt="Mountains" style="width:200px;height:215px;border-radius:50%"><br>
+                <div class="a">
+                    Dinoj<br>
+                    Team Role
+                </div>
+            </div>
+            <div class="column">
+                <img src="download4.webp" alt="Mountains" style="width:200px;height:215px;border-radius:50%"><br>
+                <div class="a">
+                    Nishma<br>
+                    Team Role
+                </div>
+            </div>
+        </div>
+
+        <ul class = "links">
+            <li><a href = "#">work</a></li>
+            <div class = "vertical-line"></div>
+            <li><a href = "#">service</a></li>
+            <div class = "vertical-line"></div>
+            <li><a href = "#">contact</a></li>
+        </ul>
+        <br>
+        <br>
+        <div id = "privacy">  </div>
+        <h2>Privacy Policy</h2>
+        <span><!-- line here --></span>
+        <br>
+        <h5 style = "font-size: 34px;"><b><i> ZETA Security</i></b></h5>
+        <h2> Privacy and Security is in our DNA </h2>
+        <img src= "ico-law.svg" style="width:500px;height:600px;">
+        <p> If you require any more information or have any questions about our privacy policy, please feel free to contact us by email at [CONTACT@MREMAIL.COM].</p>
+        <p>At ZETA we consider the privacy of our visitors to be extremely important. This privacy policy document describes in detail the types of personal information is collected and recorded by [our site url]. and how we use it. </p>
+        <p> <b>Log Files</b><br /> Like many other Web sites, [OUR SITE URL] makes use of log files. These files merely logs visitors to the site – usually a standard procedure for hosting companies and a part of hosting services's analytics. The information inside the log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date/time stamp, referring/exit pages, and possibly the number of clicks. This information is used to analyze trends, administer the site, track user's movement around the site, and gather demographic information. IP addresses, and other such information are not linked to any information that is personally identifiable. </p>
+        <p> <b>Cookies and Web Beacons</b><br />[OUR SITE URL] uses cookies to store information about visitors' preferences, to record user-specific information on which pages the site visitor accesses or visits, and to personalize or customize our web page content based upon visitors' browser type or other information that the visitor sends via their browser. </p>
+        <p><b>DoubleClick DART Cookie</b><br /> </p>
+        <p>
+            → Google, as a third party vendor, uses cookies to serve ads on [YOUR SITE URL].<br /><br />
+            → Google's use of the DART cookie enables it to serve ads to our site's visitors based upon their visit to [YOUR SITE URL] and other sites on the Internet. <br /><br />
+            → Users may opt out of the use of the DART cookie by visiting the Google ad and content network privacy policy at the following URL – <a href="http://www.google.com/privacy_ads.html">http://www.google.com/privacy_ads.html</a> </p>
+        <p><b>Our Advertising Partners</b><br /> </p>
+        <p> Some of our advertising partners may use cookies and web beacons on our site. Our advertising partners include ……. <br /></p>
+        <ul>
+            <li>Google</li>
+            <li>Commission Junction</li>
+            <li>Amazon</li>
+            <li>Adbrite</li>
+            <li>Clickbank</li>
+            <li>Yahoo! Publisher Network</li>
+            <li>Chitika</li>
+            <li>Kontera</li>
+        </ul>
+        <p><em>While each of these advertising partners has their own Privacy Policy for their site, an updated and hyperlinked resource is maintained here: <a href="https://www.privacypolicyonline.com/privacy-policy-links/">Privacy Policy Links</a>.<br /> <br />
+            You may consult this listing to find the privacy policy for each of the advertising partners of [YOUR SITE URL].</em></p>
+        <p> These third-party ad servers or ad networks use technology in their respective advertisements and links that appear on [YOUR SITE URL] and which are sent directly to your browser. They automatically receive your IP address when this occurs. Other technologies (such as cookies, JavaScript, or Web Beacons) may also be used by our site's third-party ad networks to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on the site. </p>
+        <p> [YOUR SITE URL] has no access to or control over these cookies that are used by third-party advertisers. </p>
+
+        <p><b>Third Party Privacy Policies</b><br />
+            You should consult the respective privacy policies of these third-party ad servers for more detailed information on their practices as well as for instructions about how to opt-out of certain practices. [OUR SITE URL]'s privacy policy does not apply to, and we cannot control the activities of, such other advertisers or web sites. You may find a comprehensive listing of these privacy policies and their links here: <a href="https://www.privacypolicyonline.com/privacy-policy-links/" title="Privacy Policy Links">Privacy Policy Links</a>.</p>
+        <p> If you wish to disable cookies, you may do so through your individual browser options. More detailed information about cookie management with specific web browsers can be found at the browsers' respective websites. <a href="https://www.privacypolicyonline.com/what-are-cookies/" >What Are Cookies?</a></p>
+        <p><strong>Children's Information</strong><br />We believe it is important to provide added protection for children online. We encourage parents and guardians to spend time online with their children to observe, participate in and/or monitor and guide their online activity.<br />
+            [OUR SITE URL] does not knowingly collect any personally identifiable information from children under the age of 13.  If a parent or guardian believes that [OUR SITE URL] has in its database the personally-identifiable information of a child under the age of 13, please contact us immediately (using the contact in the first paragraph) and we will use our best efforts to promptly remove such information from our records.</p>
+        <p>
+            <b>Online Privacy Policy Only</b><br />
+            This privacy policy applies only to our online activities and is valid for visitors to our website and regarding information shared and/or collected there.<br />
+            This policy does not apply to any information collected offline or via channels other than this website.</p>
+        <p><b>Consent</b><br />
+            By using our website, you hereby consent to our privacy policy and agree to its terms.
+        </p>
+        <p><b>Update</b><br />This Privacy Policy was last updated on: Nov 1st, 2019. Should we update, amend or make any changes to our privacy policy, those changes will be posted here.</p>
+        <p><!-- END of Privacy Policy || Generated by http://www.PrivacyPolicyOnline.com || --></p>
+        <p>
+        <div class="row">
+
+            <div class="column">
+                <img src="download7.jpg" alt="Forest" style="width:200px;height:215px;border-radius:50%"><br>
+                <div class="a">
+                    <b> Email Freely</b><br>
+                    <br>
+                    Zeta lets you email privately<br> to your friends and family, <br>even if they're in another <br>country.
+
+                </div>
+            </div>
+
+            <div class="column">
+                <img src="download8.png" alt="Snow" style="width:200px;height:215px;border-radius:50%"><br>
+                <div class="a">
+                    <b> Messages that Stay with You</b><br>
+                    <br>
+                    End-to-end encrypted emails<br> are stored on your device <br>and not Zeta servers after<br> they are delivered.
+                </div>
+            </div>
+
+            <div class="column">
+                <img src="download5.png" alt="Forest" style="width:200px;height:215px;border-radius:50%"><br>
+                <div class="a">
+                    <b> See for Yourself</b><br>
+                    <br>
+                    Zeta lets you check whether<br> the mails you send are <br>end-to-end encrypted. <br>Simply look for the indicator<br> directly in the inbox or<br> business info.
+                </div>
+            </div>
+        </div>
+
+
+
+        <ul class = "icons">
+            <ul class ="a">
+                <li>
+                    <i class = "fa fa-twitter"></i>
+                </li>
+                <li>
+                    <i class = "fa fa-facebook"></i>
+                </li>
+                <li>
+                    <i class = "fa fa-github"></i>
+                </li>
+                <li>
+                    <i class = "fa fa-pinterest"></i>
+                </li>
+            </ul>
+        </ul>
+    </div>
+</div>
+{% endblock %}
