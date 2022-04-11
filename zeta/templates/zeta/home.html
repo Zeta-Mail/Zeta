@@ -74,7 +74,7 @@
     <div class="main_body">
         <!--  Sidebar Start-->
         <div class="sidebar" id="sidebar">
-            <button class="sidebar_compose">
+            <button onclick="toCompose()" class="sidebar_compose">
                 <span class="material-icons">add</span>
                 <p>Compose</p>
             </button>
@@ -291,6 +291,7 @@
     <ul class="footer_link">
         <li><a href="{% url 'about_us' %}">About Us</a></li>
         <li><a href="{% url 'privacy_page' %}">Privacy Settings</a></li>
+        CopyRight @Zeta
     </ul>
 </footer>
 </body>
@@ -359,6 +360,9 @@
         window.location.href = "{% url 'email_body' %}";
     }
 
+    function toCompose(){
+        window.location.href = "{% url 'compose' %}";
+    }
 
 </script>
 
