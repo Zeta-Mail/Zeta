@@ -2,11 +2,16 @@
 {% load static %}
 
 {% block body %}
+<style>
+    .sidebar.close{
+        display: none;
+    }
+</style>
 <!--Header Start-->
 <div class="big-device">
     <div class="header">
         <div class="header_left">
-            <span class="material-icons menu_icon" (click)="toogleMenu()">menu</span>
+            <span class="material-icons menu_icon" onclick="myFun()">menu</span>
             <img src="{% static 'zeta/logo.png' %}" alt="logo">
         </div>
 
@@ -43,6 +48,10 @@
                 <h3>Inbox</h3>
             </div>
 
+            <div class="sidebarOption" (click)="toggleSpam()">
+                <span class="material-icons">report</span>
+                <h3>Spam</h3>
+            </div>
             <div class="sidebarOption" (click)="toggleSpam()">
                 <span class="material-icons">report</span>
                 <h3>Spam</h3>
@@ -203,4 +212,14 @@
         <!--Main Body End-->
     </div>
 </div>
+
+<script>
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".menu_icon");
+    console.log(sidebarBtn);
+    sidebarBtn.addEventListener("click", ()=>{
+        sidebar.classList.toggle("close");
+    });
+</script>
+
 {% endblock %}
