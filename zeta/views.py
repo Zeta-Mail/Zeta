@@ -24,6 +24,12 @@ def privacy_page(request):
 def about_us(request):
         return render(request, "zeta/about_us.html")
 
+def reply(request):
+        return render(request, "zeta/reply.html")
+
+def compose(request):
+        return render(request, "zeta/compose.html")
+
 def login_view(request):
 
     if request.method == "POST":

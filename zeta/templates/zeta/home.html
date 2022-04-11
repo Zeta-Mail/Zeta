@@ -3,22 +3,58 @@
 
 {% block body %}
 <style>
+    .emaillist{
+        overflow-y: visible;
+    }
     .sidebar.close{
         display: none;
     }
+    .spamMails{
+        display: none;
+    }
+
+    /*------------------------------------Footer--------------------------*/
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 70px;
+        background: #dfe6e9;
+        box-shadow: white;
+    }
+    footer .footer_link {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0 3rem 0;
+    }
+    footer .footer_link li {
+        margin: 0 10px;
+    }
+    footer .footer_link a {
+        text-decoration: none;
+        color: #2d3436;
+        border: 1.1px solid white;
+        padding: 5px;
+    }
+    footer .footer_link .footer-tittle {
+        text-align: center;
+        flex: 6;
+    }
+
 </style>
-<!--Header Start-->
+<body>
 <div class="big-device">
     <div class="header">
         <div class="header_left">
-            <span class="material-icons menu_icon" onclick="myFun()">menu</span>
+            <span class="material-icons menu_icon">menu</span>
             <img src="{% static 'zeta/logo.png' %}" alt="logo">
         </div>
 
         <div class="header_middle">
             <span class="material-icons">search</span>
             <input type="text" placeholder="Search">
-            <span class="material-icons">arrow_drop_down</span>
 
         </div>
 
@@ -37,25 +73,32 @@
     <!--Main Body Start-->
     <div class="main_body">
         <!--  Sidebar Start-->
-        <div class="sidebar" *ngIf="showMenu" id="sidebar">
-            <button class="sidebar_compose">
+        <div class="sidebar" id="sidebar">
+            <button onclick="toCompose()" class="sidebar_compose">
                 <span class="material-icons">add</span>
                 <p>Compose</p>
             </button>
 
-            <div class="sidebarOption sidebarOption_active" (click)="toggleInbox()">
+            <div class="sidebarOption sidebarOption_active inboxBtn" onclick="showInbox()">
                 <span class="material-icons">inbox</span>
                 <h3>Inbox</h3>
             </div>
 
-            <div class="sidebarOption" (click)="toggleSpam()">
+            <div class="sidebarOption spamBtn" onclick="showSpam()">
                 <span class="material-icons">report</span>
                 <h3>Spam</h3>
             </div>
-            <div class="sidebarOption" (click)="toggleSpam()">
-                <span class="material-icons">report</span>
-                <h3>Spam</h3>
+
+            <div class="sidebarOption staredBtn" onclick="showStarted()">
+                <span class="material-icons">star</span>
+                <h3>Stared</h3>
             </div>
+
+            <div class="sidebarOption iitBtn" onclick="showIit()">
+                <span class="material-icons">folder_special</span>
+                <h3>IIT</h3>
+            </div>
+
         </div>
         <!--  Sidebar End-->
 
@@ -65,23 +108,18 @@
             <div class="emaillist_setting">
                 <div class="emaillist_settingsleft">
                     <input type="checkbox">
-                    <span class="material-icons" (click)="toogleMore()">arrow_drop_down</span>
-                    <div class="sidebarOption" *ngIf="showMore">
-                        <input type="checkbox">
-                        <h6>Delete</h6>
+                    <div class="sidebarOption">
+                        <span class="material-icons">delete</span>
                     </div>
-                    <span class="material-icons">redo</span>
-                    <span class="material-icons">more_vert</span>
+                    <a href="{% url 'home' %}"><span class="material-icons">redo</span></a>
                 </div>
 
                 <div class="emaillist_settingsright">
-                    <span class="material-icons">chevron_left</span>
-                    <span class="material-icons">chevron_right</span>
-                    <span class="material-icons">settings</span>
+                    <a href="{% url 'privacy_page' %}"><span class="material-icons">settings</span></a>
                 </div>
             </div>
-            <div class="inboxMails" *ngIf="showInbox">
-                <div class="emailRow">
+            <div class="inboxMails">
+                <div class="emailRow" onclick="toEmailBody()">
                     <div class="emailRow_options">
                         <input type="checkbox" />
                         <span class="material-icons">star_border</span>
@@ -96,7 +134,7 @@
                     <div class="emailRow_time">10pm</div>
                 </div>
                 <!--      2-->
-                <div class="emailRow">
+                <div class="emailRow" onclick="toEmailBody()">
                     <div class="emailRow_options">
                         <input type="checkbox" />
                         <span class="material-icons">star_border</span>
@@ -111,7 +149,7 @@
                     <div class="emailRow_time">10pm</div>
                 </div>
                 <!--      3-->
-                <div class="emailRow">
+                <div class="emailRow" onclick="toEmailBody()">
                     <div class="emailRow_options">
                         <input type="checkbox" />
                         <span class="material-icons">star_border</span>
@@ -126,7 +164,7 @@
                     <div class="emailRow_time">10pm</div>
                 </div>
                 <!--      4-->
-                <div class="emailRow">
+                <div class="emailRow" onclick="toEmailBody()">
                     <div class="emailRow_options">
                         <input type="checkbox" />
                         <span class="material-icons">star_border</span>
@@ -141,8 +179,9 @@
                     <div class="emailRow_time">10pm</div>
                 </div>
             </div>
-            <div class="spamMails" *ngIf="showSpam">
-                <div class="emailRow">
+
+            <div class="spamMails">
+                <div class="emailRow" onclick="toEmailBody()">
                     <div class="emailRow_options">
                         <input type="checkbox" />
                         <span class="material-icons">star_border</span>
@@ -157,7 +196,7 @@
                     <div class="emailRow_time">10pm</div>
                 </div>
                 <!--      2-->
-                <div class="emailRow">
+                <div class="emailRow" onclick="toEmailBody()">
                     <div class="emailRow_options">
                         <input type="checkbox" />
                         <span class="material-icons">star_border</span>
@@ -173,8 +212,42 @@
                 </div>
 
             </div>
-            <div class="staredMails" *ngIf="showStared">
-                <div class="emailRow">
+
+            <div class="staredMails">
+                <div class="emailRow" onclick="toEmailBody()">
+                    <div class="emailRow_options">
+                        <input type="checkbox" />
+                        <span class="material-icons">star_border</span>
+                        <span class="material-icons">label_important</span>
+                    </div>
+                    <div class="emailRow_title">Java</div>
+                    <div class="emailRow_message">
+                        <h4>You have new friend request <span class="emailRow_description">
+                                Add this person to your friend list.
+                            </span></h4>
+                    </div>
+                    <div class="emailRow_time">10pm</div>
+                </div>
+                <!--      2-->
+                <div class="emailRow" onclick="toEmailBody()">
+                    <div class="emailRow_options">
+                        <input type="checkbox" />
+                        <span class="material-icons">star_border</span>
+                        <span class="material-icons">label_important</span>
+                    </div>
+                    <div class="emailRow_title">UoW</div>
+                    <div class="emailRow_message">
+                        <h4>You have new friend request <span class="emailRow_description">
+                                Add this person to your friend list.
+                            </span></h4>
+                    </div>
+                    <div class="emailRow_time">10pm</div>
+                </div>
+
+            </div>
+
+            <div class="iitMails">
+                <div class="emailRow" onclick="toEmailBody()">
                     <div class="emailRow_options">
                         <input type="checkbox" />
                         <span class="material-icons">star_border</span>
@@ -189,7 +262,7 @@
                     <div class="emailRow_time">10pm</div>
                 </div>
                 <!--      2-->
-                <div class="emailRow">
+                <div class="emailRow" onclick="toEmailBody()">
                     <div class="emailRow_options">
                         <input type="checkbox" />
                         <span class="material-icons">star_border</span>
@@ -213,13 +286,84 @@
     </div>
 </div>
 
+<!--=================footer=====================-->
+<footer>
+    <ul class="footer_link">
+        <li><a href="{% url 'about_us' %}">About Us</a></li>
+        <li><a href="{% url 'privacy_page' %}">Privacy Settings</a></li>
+        CopyRight @Zeta
+    </ul>
+</footer>
+</body>
+<!--Header Start-->
+
+
 <script>
     let sidebar = document.querySelector(".sidebar");
     let sidebarBtn = document.querySelector(".menu_icon");
+
+    let inboxContent = document.querySelector(".inboxMails");
+    let inboxBtn = document.querySelector(".inboxBtn");
+    let spamContent = document.querySelector(".spamMails");
+    let spamBtn = document.querySelector(".spamBtn");
+    let staredContent = document.querySelector(".staredMails");
+    let staredBtn = document.querySelector(".staredBtn");
+    let iitContent = document.querySelector(".iitMails");
+    let iitBtn = document.querySelector(".iitBtn");
+
     console.log(sidebarBtn);
     sidebarBtn.addEventListener("click", ()=>{
         sidebar.classList.toggle("close");
     });
+
+    function showInbox(){
+
+        console.log(inboxBtn);
+        inboxBtn.addEventListener("click", ()=>{
+            inboxContent.style.display="block";
+            spamContent.style.display="none";
+        });
+    }
+    function showSpam(){
+        console.log(spamBtn);
+        spamBtn.addEventListener("click", ()=>{
+            spamContent.style.display="block";
+            inboxContent.style.display="none";
+            staredContent.style.display="none";
+            iitContent.style.display="none";
+
+        });
+    }
+    function showStarted(){
+        console.log(staredBtn);
+        staredBtn.addEventListener("click", ()=>{
+            spamContent.style.display="none";
+            inboxContent.style.display="none";
+            staredContent.style.display="block";
+            iitContent.style.display="none";
+
+        });
+    }
+
+    function showIit(){
+        console.log(staredBtn);
+        iitBtn.addEventListener("click", ()=>{
+            spamContent.style.display="none";
+            inboxContent.style.display="none";
+            staredContent.style.display="none";
+            iitContent.style.display="block";
+
+        });
+    }
+
+    function toEmailBody(){
+        window.location.href = "{% url 'email_body' %}";
+    }
+
+    function toCompose(){
+        window.location.href = "{% url 'compose' %}";
+    }
+
 </script>
 
 {% endblock %}
