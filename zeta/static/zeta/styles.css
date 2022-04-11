@@ -14,6 +14,8 @@
   --shaow-color:rgba(0, 0, 0, 0.5);
   --sidevar-font:#818181;
   --email-dis-msg:#1e272e;
+  --footer-bac:#dfe6e9;
+  --black-light:black;
   --img:invert(0%) sepia(96%) saturate(0%) hue-rotate(46deg) brightness(93%) contrast(103%);
 }
 
@@ -28,6 +30,8 @@ body.dark{
   --shaow-color: rgba(169, 162, 162, 0.5);
   --sidevar-font:#b2bec3;
   --email-dis-msg:#808e9b;
+  --footer-bac:#2f3640;
+  --black-light:white;
   --img:invert(93%) sepia(0%) saturate(5177%) hue-rotate(242deg) brightness(108%) contrast(96%);
 
 
@@ -146,6 +150,21 @@ body.dark{
   background-color: var(--sideBar-light);
   color: var(--sideBar-dark);
   font-weight: 800;
+}
+.sidebar .sidebar_compose p{
+  margin-top: 10px;
+}
+.caption{
+  color: var(--gray-color);
+  font-size: 18px;
+  font-weight: 500;
+}
+.caption:hover{
+  opacity: 0.5;
+  color: var(--shaow-color);
+}
+.emaillist{
+  margin-left: 20px;
 }
 .main_body {
   display: flex;
@@ -274,15 +293,14 @@ body {
 .spamMails{
   display: none;
 }
-
 /*------------------------------------Footer--------------------------*/
 footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 70px;
-  background: #dfe6e9;
-  box-shadow: var(--white-color);
+  background: var(--footer-bac);
+  box-shadow: var(--shaow-color);
 }
 footer .footer_link {
   list-style: none;
@@ -290,19 +308,78 @@ footer .footer_link {
   align-items: center;
   justify-content: center;
   margin: 1rem 0 3rem 0;
+  color: var(--black-light);
 }
 footer .footer_link li {
   margin: 0 10px;
 }
 footer .footer_link a {
   text-decoration: none;
-  color: #2d3436;
   border: 1.1px solid var(--white-color);
   padding: 5px;
+  color: var(--black-light);
 }
 footer .footer_link .footer-tittle {
   text-align: center;
   flex: 6;
+}
+
+/*emailBody*/
+.emailBody_content{
+  text-align: justify;
+  text-justify: inter-word;
+  margin-right: 20px;
+  color: var(--black-light);
+}
+.emailBody_sender{
+  color: var(--black-light);
+}
+.emailBody_time{
+  text-align: right;
+  margin-right: 20px;
+
+}
+
+.emailBody_subject{
+  color: var(--gray-color);
+}
+.form-group {
+  width: 100%;
+  margin-top: 20px;
+  font-size: 13px;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 5px;
+  font-size: 13px;
+  border: 1px solid rgba(128, 128, 128, 0.199);
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+textarea {
+  resize: vertical;
+}
+.replyBtn{
+  width: 15%;
+  font-weight: 1000;
+  text-transform: capitalize;
+  text-align: center;
+  color: gray;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  align-items: normal;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.9);
+
+
+}
+.replyBtn:hover{
+  opacity: 0.5;
 }
 
 /*---------------------------------------theam----------------*/

@@ -3,21 +3,7 @@
 
 {% block body %}
 <style>
-    .sidebar .sidebar_compose p{
-        margin-top: 10px;
-    }
-    .caption{
-        color: var(--gray-color);
-        font-size: 18px;
-        font-weight: 500;
-    }
-    .caption:hover{
-        opacity: 0.5;
-        color: var(--shaow-color);
-    }
-    .emaillist{
-        margin-left: 20px;
-    }
+
 </style>
 <body>
 <div class="big-device">
@@ -355,8 +341,6 @@
     const body = document.querySelector('body'),
         modeSwitch = body.querySelector(".toggle-switch"),
         modeText = body.querySelector(".mode-text");
-
-
 
 
     modeSwitch.addEventListener("click" , () =>{
