@@ -2,103 +2,12 @@
 {% load static %}
 
 {% block body %}
-<style>
-    .emaillist{
-        overflow-y: visible;
-    }
-    .sidebar.close{
-        display: none;
-    }
-    .spamMails{
-        display: none;
-    }
 
-    /*------------------------------------Footer--------------------------*/
-    footer {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 70px;
-        background: #dfe6e9;
-        box-shadow: white;
-    }
-    footer .footer_link {
-        list-style: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 1rem 0 3rem 0;
-    }
-    footer .footer_link li {
-        margin: 0 10px;
-    }
-    footer .footer_link a {
-        text-decoration: none;
-        color: #2d3436;
-        border: 1.1px solid white;
-        padding: 5px;
-    }
-    footer .footer_link .footer-tittle {
-        text-align: center;
-        flex: 6;
-    }
-
-    /*emailBody*/
-    .emailBody_content{
-        text-align: justify;
-        text-justify: inter-word;
-        margin-right: 20px;
-    }
-    .emailBody_time{
-        text-align: right;
-        margin-right: 20px;
-    }
-
-    .form-group {
-        width: 100%;
-        margin-top: 20px;
-        font-size: 13px;
-    }
-    .form-group input,
-    .form-group textarea {
-        width: 100%;
-        padding: 5px;
-        font-size: 13px;
-        border: 1px solid rgba(128, 128, 128, 0.199);
-        margin-top: 5px;
-    }
-
-    textarea {
-        resize: vertical;
-    }
-    .replyBtn{
-        width: 15%;
-        font-weight: 1000;
-        text-transform: capitalize;
-        text-align: center;
-        color: gray;
-        border-radius: 5px;
-        background-color: white;
-        display: flex;
-        align-items: normal;
-        cursor: pointer;
-        outline: none;
-        border: none;
-        box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.9);
-
-
-    }
-    .replyBtn:hover{
-        opacity: 0.5;
-    }
-
-
-</style>
 <body>
 <div class="big-device">
     <div class="header">
         <div class="header_left">
-            <img src="{% static 'zeta/logo.png' %}" alt="logo">
+            <img class="logo" src="{% static 'zeta/logo1.png' %}" alt="logo">
         </div>
 
         <div class="header_right">
@@ -144,16 +53,16 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores consectetur
                     debitis id magni nihil quam? Corporis harum in iure magni nemo temporibus veritatis.
                     Consectetur earum eligendi id porro sunt.</p>
-                
+
                 <div class="replyDiv">
-                            <form action="#" method="#" id="my-form">
-                                <div class="form-group">
-                                    <textarea placeholder="Reply" name="massage" id="massage" cols="30" rows="5"></textarea>
-                                </div>
-                                <button class="replyBtn" type="submit">Submit</button>
-                            </form>
+                    <form action="#" method="#" id="my-form">
+                        <div class="form-group">
+                            <textarea placeholder="Reply" name="massage" id="massage" cols="30" rows="5"></textarea>
+                        </div>
+                        <button class="replyBtn" type="submit">Submit</button>
+                    </form>
                 </div>
-                
+
 
             </div>
 
@@ -167,11 +76,38 @@
 <!--=================footer=====================-->
 <footer>
     <ul class="footer_link">
+        <div class="mode">
+            <div class="sun-moon">
+                <i class='bx bxs-sun sun'></i>
+                <i class='bx bxs-moon moon'></i>
+                <div class="toggle-switch">
+                    <span class="switch"></span>
+                </div>
+            </div>
+        </div>
         <li><a href="{% url 'about_us' %}">About Us</a></li>
         <li><a href="{% url 'privacy_page' %}">Privacy Settings</a></li>
         CopyRight @Zeta
     </ul>
 </footer>
 </body>
-<!--Header Start-->
+<script>
+    const body = document.querySelector('body'),
+        modeSwitch = body.querySelector(".toggle-switch"),
+        modeText = body.querySelector(".mode-text");
+
+
+
+
+    modeSwitch.addEventListener("click" , () =>{
+        body.classList.toggle("dark");
+
+        if(body.classList.contains("dark")){
+            modeText.innerText = "Light mode";
+        }else{
+            modeText.innerText = "Dark mode";
+
+        }
+    });
+</script>
 {% endblock %}
