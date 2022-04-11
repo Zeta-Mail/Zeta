@@ -101,12 +101,6 @@
             <img src="{% static 'zeta/logo.png' %}" alt="logo">
         </div>
 
-        <div class="header_middle">
-            <span class="material-icons">search</span>
-            <input type="text" placeholder="Search">
-
-        </div>
-
         <div class="header_right">
             {% if user.is_authenticated %}
             <span><p class="caption">Hi, <strong class="name">{{ user.username.capitalize }}!</strong></p></span>

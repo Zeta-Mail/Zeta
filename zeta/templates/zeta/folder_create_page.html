@@ -6,6 +6,12 @@
     .emaillist{
         overflow-y: visible;
     }
+    .sidebar.close{
+        display: none;
+    }
+    .spamMails{
+        display: none;
+    }
 
     /*------------------------------------Footer--------------------------*/
     footer {
@@ -32,22 +38,32 @@
         border: 1.1px solid white;
         padding: 5px;
     }
-    footer .footer_link  {
+    footer .footer_link .footer-tittle {
         text-align: center;
         flex: 6;
     }
 
-    /*----------------*/
+    /*emailBody*/
+    .emailBody_content{
+        text-align: justify;
+        text-justify: inter-word;
+        margin-right: 20px;
+    }
+    .emailBody_time{
+        text-align: right;
+        margin-right: 20px;
+    }
+
     .form-group {
         width: 100%;
         margin-top: 20px;
-        font-size: 20px;
+        font-size: 13px;
     }
     .form-group input,
     .form-group textarea {
-        width: 60%;
+        width: 100%;
         padding: 5px;
-        font-size: 18px;
+        font-size: 13px;
         border: 1px solid rgba(128, 128, 128, 0.199);
         margin-top: 5px;
     }
@@ -55,7 +71,6 @@
     textarea {
         resize: vertical;
     }
-
     .replyBtn{
         width: 15%;
         font-weight: 1000;
@@ -84,6 +99,12 @@
     <div class="header">
         <div class="header_left">
             <img src="{% static 'zeta/logo.png' %}" alt="logo">
+        </div>
+
+        <div class="header_middle">
+            <span class="material-icons">search</span>
+            <input type="text" placeholder="Search">
+
         </div>
 
         <div class="header_right">
@@ -118,18 +139,10 @@
 
             </div>
             <div class="emailBody_content">
+
                 <div class="replyDiv">
-                    <form action="https://formspree.io/mbjzbwaj" method="POST" id="my-form">
-
-                        <div class="form-group">
-                            <input placeholder="To" type="text" id="firstName" name="firstName">
-                        </div>
-
-                        <div class="form-group">
-                            <textarea placeholder="Message" name="massage" id="massage" cols="30" rows="3"></textarea>
-                        </div>
-
-                        <button class="replyBtn" type="submit">Submit</button>
+                    <form action="#" method="#" id="my-form">
+                        <button class="replyBtn" type="#">Create</button>
                     </form>
                 </div>
 
@@ -153,5 +166,4 @@
 </footer>
 </body>
 <!--Header Start-->
-
 {% endblock %}

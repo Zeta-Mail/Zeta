@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap');
+
+:root {
+  /* ===== Colors ===== */
+  --whitesmoke-color: whitesmoke;
+  --gray-color: whitesmoke;
+  --sideBar-dark:#c04b37;
+  --sideBar-light:#fccccc;
+}
+
+body.dark{
+  --whitesmoke-color: #343030;
+  --gray-color: whitesmoke;
+  --sideBar-dark: #d7700a;
+  --sideBar-light: #daaa67;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +25,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid whitesmoke;
+  border-bottom: 1px solid var(--whitesmoke-color);
 }
 .header .header_left {
   display: flex;
@@ -28,7 +44,7 @@
   display: flex;
   flex: 0.7;
   align-items: center;
-  background-color: whitesmoke;
+  background-color: var(--whitesmoke-color);
   padding: 10px;
   border-radius: 5px;
 }
@@ -102,8 +118,8 @@
   cursor: pointer;
 }
 .sidebarOption:hover, .sidebarOption:hover h3, .sidebarOption:hover .material-icons, .sidebarOption_active, .sidebarOption_active h3, .sidebarOption_active .material-icons {
-  background-color: #fccccc;
-  color: #c04b37;
+  background-color: var(--sideBar-light);
+  color: var(--sideBar-dark);
   font-weight: 800;
 }
 .main_body {
@@ -118,7 +134,7 @@
   top: 0;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid whitesmoke;
+  border-bottom: 1px solid var(--whitesmoke-color);
   background-color: white;
   z-index: 999;
   padding-right: 8px;
@@ -140,7 +156,7 @@ body {
   top: 0;
   display: flex;
   background-color: white;
-  border-bottom: 1px solid whitesmoke;
+  border-bottom: 1px solid var(--whitesmoke-color);
   z-index: 999;
 }
 .show-menu{
@@ -157,7 +173,7 @@ body {
   border-width: 0;
 }
 .emaillist_section .section :hover {
-  background-color: whitesmoke;
+  background-color: var(--whitesmoke-color);
   border-width: 3px;
 }
 .emaillist_section .section h4 {
@@ -216,6 +232,6 @@ body {
   color: gray;
 }
 .emailRow:hover {
-  border-top: 1px solid whitesmoke;
+  border-top: 1px solid var(--whitesmoke-color);
   box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.24);
 }
