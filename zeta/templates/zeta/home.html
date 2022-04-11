@@ -3,7 +3,9 @@
 
 {% block body %}
 <style>
-
+    .header_middle input{
+        color: var(--black-light);
+    }
 </style>
 <body>
 <div class="big-device">
@@ -80,7 +82,7 @@
                 </div>
 
                 <div class="emaillist_settingsright">
-                    <a href="{% url 'privacy_page' %}"><span class="material-icons">settings</span></a>
+                    <a href="{% url 'folder_create_page' %}"><span class="material-icons">settings</span></a>
                 </div>
             </div>
             <div class="inboxMails">

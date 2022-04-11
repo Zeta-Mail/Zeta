@@ -2,7 +2,6 @@
 {% load static %}
 
 {% block body %}
-
 <body>
 <div class="big-device">
     <div class="header">
@@ -32,41 +31,20 @@
 
         <!--  Email List Start-->
         <div class="emaillist">
-            <!--    Setting Start-->
             <div class="emaillist_setting">
                 <div class="emaillist_settingsleft">
-                    <a href="{% url 'email_body' %}"><span class="material-icons">arrow_back</span></a>
+                    <a href="{% url 'home' %}"><span class="material-icons">arrow_back</span></a>
 
                 </div>
-
-
             </div>
-            <div class="emailBody_content">
-                <h3 class="emailBody_subject">Lorem ipsum Dolar</h3>
-
-                <div class="emailBody_sender emaillist">
-                    <h5>Facebook</h5>
-                    <h6>To me</h6>
-                    <div class="emailBody_time">10pm</div>
-                </div>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores consectetur
-                    debitis id magni nihil quam? Corporis harum in iure magni nemo temporibus veritatis.
-                    Consectetur earum eligendi id porro sunt.</p>
-
-                <div class="replyDiv">
-                    <form action="#" method="#" id="my-form">
-                        <div class="form-group">
-                            <textarea placeholder="Reply" name="massage" id="massage" cols="30" rows="5"></textarea>
-                        </div>
-                        <button class="replyBtn" type="submit">Submit</button>
-                    </form>
-                </div>
-
-
+            <div class="replyDiv">
+                <form action="#" method="#" id="my-form">
+                    <div class="form-group">
+                        <textarea placeholder="Folder Name" name="massage" id="massage" cols="15" rows="3"></textarea>
+                    </div>
+                    <button class="replyBtn" type="submit">Create</button>
+                </form>
             </div>
-
-            <!--    Email List Row End-->
         </div>
         <!--  Email List End-->
         <!--Main Body End-->
