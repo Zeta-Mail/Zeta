@@ -143,6 +143,9 @@ body {
   border-bottom: 1px solid whitesmoke;
   z-index: 999;
 }
+.show-menu{
+  display: none;
+}
 .emaillist_section .section {
   display: flex;
   align-items: center;
