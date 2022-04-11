@@ -53,7 +53,25 @@
         text-align: right;
         margin-right: 20px;
     }
-    .emailBodyBtn{
+
+    .form-group {
+        width: 100%;
+        margin-top: 20px;
+        font-size: 13px;
+    }
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 5px;
+        font-size: 13px;
+        border: 1px solid rgba(128, 128, 128, 0.199);
+        margin-top: 5px;
+    }
+
+    textarea {
+        resize: vertical;
+    }
+    .replyBtn{
         width: 15%;
         font-weight: 1000;
         text-transform: capitalize;
@@ -70,9 +88,11 @@
 
 
     }
-    .emailBodyBtn:hover{
+    .replyBtn:hover{
         opacity: 0.5;
     }
+
+
 </style>
 <body>
 <div class="big-device">
@@ -112,17 +132,11 @@
             <!--    Setting Start-->
             <div class="emaillist_setting">
                 <div class="emaillist_settingsleft">
-                    <a href="{% url 'home' %}"><span class="material-icons">arrow_back</span></a>
-                    <span class="material-icons">report</span>
-                    <span class="material-icons">delete</span>
-                    <span class="material-icons">drive_file_move</span>
+                    <a href="{% url 'email_body' %}"><span class="material-icons">arrow_back</span></a>
 
                 </div>
 
-                <div class="emaillist_settingsright">
-                    <span class="material-icons">volume_up</span>
-
-                </div>
+                
             </div>
             <div class="emailBody_content">
                 <h3 class="emailBody_subject">Lorem ipsum Dolar</h3>
@@ -136,11 +150,16 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores consectetur
                     debitis id magni nihil quam? Corporis harum in iure magni nemo temporibus veritatis.
                     Consectetur earum eligendi id porro sunt.</p>
-
-                <button class="emailBodyBtn" onclick="toReplyPage()">
-                    <span class="material-icons">reply</span>
-                    <p>reply</p>
-                </button>
+                
+                <div class="replyDiv">
+                            <form action="#" method="#" id="my-form">
+                                <div class="form-group">
+                                    <textarea placeholder="Reply" name="massage" id="massage" cols="30" rows="5"></textarea>
+                                </div>
+                                <button class="replyBtn" type="submit">Submit</button>
+                            </form>
+                </div>
+                
 
             </div>
 
@@ -160,17 +179,52 @@
 </footer>
 </body>
 <!--Header Start-->
-
-
 <script>
+    window.addEventListener("DOMContentLoaded", function () {
+        // get the form elements defined in your form HTML above
 
+        var form = document.getElementById("my-form");
+        // var button = document.getElementById("my-form-button");
+        var status = document.getElementById("status");
 
+        // Success and Error functions for after the form is submitted
 
-    function toReplyPage(){
-        window.location.href = "{% url 'reply' %}";
+        function success() {
+            form.reset();
+            status.classList.add("success");
+            status.innerHTML = "Thanks!";
+        }
+
+        function error() {
+            status.classList.add("error");
+            status.innerHTML = "Oops! There was a problem.";
+        }
+
+        // handle the form submission event
+
+        form.addEventListener("submit", function (ev) {
+            ev.preventDefault();
+            var data = new FormData(form);
+            ajax(form.method, form.action, data, success, error);
+        });
+    });
+
+    // helper function for sending an AJAX request
+
+    function ajax(method, url, data, success, error) {
+        var xhr = new XMLHttpRequest();
+        xhr.open(method, url);
+        xhr.setRequestHeader("Accept", "application/json");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState !== XMLHttpRequest.DONE) return;
+            if (xhr.status === 200) {
+                success(xhr.response, xhr.responseType);
+            } else {
+                error(xhr.status, xhr.response, xhr.responseType);
+            }
+        };
+        xhr.send(data);
     }
-
-
 
 </script>
 

@@ -3,11 +3,48 @@
 
 {% block body %}
 <style>
+    .emaillist{
+        overflow-y: visible;
+    }
     .sidebar.close{
         display: none;
     }
+    .spamMails{
+        display: none;
+    }
+
+    /*------------------------------------Footer--------------------------*/
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 70px;
+        background: #dfe6e9;
+        box-shadow: white;
+    }
+    footer .footer_link {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0 3rem 0;
+    }
+    footer .footer_link li {
+        margin: 0 10px;
+    }
+    footer .footer_link a {
+        text-decoration: none;
+        color: #2d3436;
+        border: 1.1px solid white;
+        padding: 5px;
+    }
+    footer .footer_link .footer-tittle {
+        text-align: center;
+        flex: 6;
+    }
+
 </style>
-<!--Header Start-->
+<body>
 <div class="big-device">
     <div class="header">
         <div class="header_left">
@@ -71,19 +108,18 @@
             <div class="emaillist_setting">
                 <div class="emaillist_settingsleft">
                     <input type="checkbox">
-                    <span class="material-icons">arrow_drop_down</span>
                     <div class="sidebarOption">
                         <span class="material-icons">delete</span>
                     </div>
-                    <span class="material-icons">redo</span>
+                    <a href="{% url 'home' %}"><span class="material-icons">redo</span></a>
                 </div>
 
                 <div class="emaillist_settingsright">
-                    <span class="material-icons">settings</span>
+                    <a href="{% url 'privacy_page' %}"><span class="material-icons">settings</span></a>
                 </div>
             </div>
             <div class="inboxMails">
-                <div class="emailRow">
+                <div class="emailRow" onclick="toEmailBody()">
                     <div class="emailRow_options">
                         <input type="checkbox" />
                         <span class="material-icons">star_border</span>
@@ -98,7 +134,7 @@
                     <div class="emailRow_time">10pm</div>
                 </div>
                 <!--      2-->
-                <div class="emailRow">
+                <div class="emailRow" onclick="toEmailBody()">
                     <div class="emailRow_options">
                         <input type="checkbox" />
                         <span class="material-icons">star_border</span>
@@ -113,7 +149,7 @@
                     <div class="emailRow_time">10pm</div>
                 </div>
                 <!--      3-->
-                <div class="emailRow">
+                <div class="emailRow" onclick="toEmailBody()">
                     <div class="emailRow_options">
                         <input type="checkbox" />
                         <span class="material-icons">star_border</span>
@@ -128,7 +164,7 @@
                     <div class="emailRow_time">10pm</div>
                 </div>
                 <!--      4-->
-                <div class="emailRow">
+                <div class="emailRow" onclick="toEmailBody()">
                     <div class="emailRow_options">
                         <input type="checkbox" />
                         <span class="material-icons">star_border</span>
@@ -142,40 +178,10 @@
                     </div>
                     <div class="emailRow_time">10pm</div>
                 </div>
-<!--                5-->
-                <div class="emailRow">
-                    <div class="emailRow_options">
-                        <input type="checkbox" />
-                        <span class="material-icons">star_border</span>
-                        <span class="material-icons">label_important</span>
-                    </div>
-                    <div class="emailRow_title">Java</div>
-                    <div class="emailRow_message">
-                        <h4>You have new friend request <span class="emailRow_description">
-                                Add this person to your friend list.
-                            </span></h4>
-                    </div>
-                    <div class="emailRow_time">10pm</div>
-                </div>
-                <!--      6-->
-                <div class="emailRow">
-                    <div class="emailRow_options">
-                        <input type="checkbox" />
-                        <span class="material-icons">star_border</span>
-                        <span class="material-icons">label_important</span>
-                    </div>
-                    <div class="emailRow_title">UoW</div>
-                    <div class="emailRow_message">
-                        <h4>You have new friend request <span class="emailRow_description">
-                                Add this person to your friend list.
-                            </span></h4>
-                    </div>
-                    <div class="emailRow_time">10pm</div>
-                </div>
             </div>
 
             <div class="spamMails">
-                <div class="emailRow">
+                <div class="emailRow" onclick="toEmailBody()">
                     <div class="emailRow_options">
                         <input type="checkbox" />
                         <span class="material-icons">star_border</span>
@@ -190,7 +196,7 @@
                     <div class="emailRow_time">10pm</div>
                 </div>
                 <!--      2-->
-                <div class="emailRow">
+                <div class="emailRow" onclick="toEmailBody()">
                     <div class="emailRow_options">
                         <input type="checkbox" />
                         <span class="material-icons">star_border</span>
@@ -208,7 +214,7 @@
             </div>
 
             <div class="staredMails">
-                <div class="emailRow">
+                <div class="emailRow" onclick="toEmailBody()">
                     <div class="emailRow_options">
                         <input type="checkbox" />
                         <span class="material-icons">star_border</span>
@@ -223,7 +229,7 @@
                     <div class="emailRow_time">10pm</div>
                 </div>
                 <!--      2-->
-                <div class="emailRow">
+                <div class="emailRow" onclick="toEmailBody()">
                     <div class="emailRow_options">
                         <input type="checkbox" />
                         <span class="material-icons">star_border</span>
@@ -241,7 +247,7 @@
             </div>
 
             <div class="iitMails">
-                <div class="emailRow">
+                <div class="emailRow" onclick="toEmailBody()">
                     <div class="emailRow_options">
                         <input type="checkbox" />
                         <span class="material-icons">star_border</span>
@@ -256,7 +262,7 @@
                     <div class="emailRow_time">10pm</div>
                 </div>
                 <!--      2-->
-                <div class="emailRow">
+                <div class="emailRow" onclick="toEmailBody()">
                     <div class="emailRow_options">
                         <input type="checkbox" />
                         <span class="material-icons">star_border</span>
@@ -279,6 +285,17 @@
         <!--Main Body End-->
     </div>
 </div>
+
+<!--=================footer=====================-->
+<footer>
+    <ul class="footer_link">
+        <li><a href="{% url 'about_us' %}">About Us</a></li>
+        <li><a href="{% url 'privacy_page' %}">Privacy Settings</a></li>
+    </ul>
+</footer>
+</body>
+<!--Header Start-->
+
 
 <script>
     let sidebar = document.querySelector(".sidebar");
@@ -303,6 +320,7 @@
         console.log(inboxBtn);
         inboxBtn.addEventListener("click", ()=>{
             inboxContent.style.display="block";
+            spamContent.style.display="none";
         });
     }
     function showSpam(){
@@ -335,6 +353,10 @@
             iitContent.style.display="block";
 
         });
+    }
+
+    function toEmailBody(){
+        window.location.href = "{% url 'email_body' %}";
     }
 
 

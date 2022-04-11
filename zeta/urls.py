@@ -11,4 +11,5 @@ urlpatterns = [
     path("email_body", views.email_body, name="email_body"),
     path("privacy_page", views.privacy_page, name="privacy_page"),
     path("about_us", views.about_us, name="about_us"),
+    path("reply", views.reply, name="reply"),
 ]
