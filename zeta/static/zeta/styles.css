@@ -1,19 +1,36 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap');
 
 :root {
   /* ===== Colors ===== */
+  --body-color:white;
   --whitesmoke-color: whitesmoke;
-  --gray-color: whitesmoke;
+  --gray-color: gray;
   --sideBar-dark:#c04b37;
   --sideBar-light:#fccccc;
+  --red-color:red;
+  --white-color:white;
+  --shaow-color:rgba(0, 0, 0, 0.5);
+  --sidevar-font:#818181;
+  --email-dis-msg:#1e272e;
+  --img:invert(0%) sepia(96%) saturate(0%) hue-rotate(46deg) brightness(93%) contrast(103%);
 }
 
 body.dark{
-  --whitesmoke-color: #343030;
+  --body-color:#343030;
+  --whitesmoke-color: #3a3636;
   --gray-color: whitesmoke;
-  --sideBar-dark: #d7700a;
+  --sideBar-dark: #fa8231;
   --sideBar-light: #daaa67;
+  --red-color: #4f0505;
+  --white-color:#343030;
+  --shaow-color: rgba(169, 162, 162, 0.5);
+  --sidevar-font:#b2bec3;
+  --email-dis-msg:#808e9b;
+  --img:invert(93%) sepia(0%) saturate(5177%) hue-rotate(242deg) brightness(108%) contrast(96%);
+
+
 }
 
 * {
@@ -21,6 +38,7 @@ body.dark{
   padding: 0;
   overflow: hidden;
 }
+
 .header {
   display: flex;
   align-items: center;
@@ -42,7 +60,8 @@ body.dark{
 }
 .header .header_middle {
   display: flex;
-  flex: 0.7;
+  flex: 0.8;
+  height: 40px;
   align-items: center;
   background-color: var(--whitesmoke-color);
   padding: 10px;
@@ -55,6 +74,7 @@ body.dark{
   outline: none;
   font-size: medium;
   background-color: transparent;
+  opacity: 0.5;
 }
 .header .header_right {
   display: flex;
@@ -64,7 +84,7 @@ body.dark{
   padding: 10px;
 }
 .material-icons {
-  color: gray;
+  color: var(--gray-color );
 }
 .sidebar {
   flex: 0.3;
@@ -76,16 +96,20 @@ body.dark{
   margin-left: 10px;
   margin-bottom: 15px;
   text-transform: capitalize;
-  color: gray;
+  color: var(--gray-color);
   padding: 15px;
   border-radius: 30px;
-  background-color: white;
+  background-color: var(--white-color);
   display: flex;
   align-items: center;
   cursor: pointer;
   outline: none;
   border: none;
-  box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 5px -2px var(--shaow-color);
+}
+
+.sidebar .sidebar_compose:hover{
+  opacity: 0.3;
 }
 .sidebar .sidebar_compose span {
   margin-right: 5px;
@@ -135,7 +159,7 @@ body.dark{
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid var(--whitesmoke-color);
-  background-color: white;
+  background-color: var(--body-color);
   z-index: 999;
   padding-right: 8px;
 }
@@ -150,12 +174,13 @@ body.dark{
 body {
   height: 100vh;
   overflow: hidden;
+  background-color: var(--body-color);
 }
 .emaillist_section {
   position: sticky;
   top: 0;
   display: flex;
-  background-color: white;
+  background-color: var(--white-color);
   border-bottom: 1px solid var(--whitesmoke-color);
   z-index: 999;
 }
@@ -169,7 +194,7 @@ body {
   padding: 15px;
   min-width: 200px;
   cursor: pointer;
-  color: gray;
+  color: var(--gray-color);
   border-width: 0;
 }
 .emaillist_section .section :hover {
@@ -181,19 +206,19 @@ body {
   margin-left: 15px;
 }
 .emaillist_section .section_selected {
-  background-color: whitesmoke;
+  background-color: var(--whitesmoke-color);
   border-width: 3px;
-  color: red;
-  border-bottom: 3px solid red;
+  color: var(--red-color);
+  border-bottom: 3px solid var(--red-color);
 }
 .emaillist_section .section_selected .material-icons {
-  color: red;
+  color: var(--red-color);
 }
 .emailRow {
   display: flex;
   align-items: center;
   height: 50px;
-  border-bottom: 1px solid whitesmoke;
+  border-bottom: 1px solid var(--whitesmoke-color);
   cursor: pointer;
   z-index: 999;
 }
@@ -217,21 +242,134 @@ body {
   text-overflow: ellipsis;
   padding-left: 5px;
   padding-right: 5px;
+  color: var(--email-dis-msg);
 }
 .emailRow .emailRow_title {
   font-size: 13px;
   flex: 0.3;
+  color: var(--gray-color);
 }
 .emailRow .emailRow_time {
   padding-right: 15px;
   font-size: 10px;
   font-weight: bold;
+  color: var(--gray-color);
 }
 .emailRow .emailRow_description {
   font-weight: 400;
-  color: gray;
+  color: var(--gray-color);
 }
 .emailRow:hover {
   border-top: 1px solid var(--whitesmoke-color);
   box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.24);
+}
+
+.emaillist{
+  overflow-y: visible;
+}
+.sidebar.close{
+  display: none;
+}
+.spamMails{
+  display: none;
+}
+
+/*------------------------------------Footer--------------------------*/
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background: #dfe6e9;
+  box-shadow: var(--white-color);
+}
+footer .footer_link {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+}
+footer .footer_link li {
+  margin: 0 10px;
+}
+footer .footer_link a {
+  text-decoration: none;
+  color: #2d3436;
+  border: 1.1px solid var(--white-color);
+  padding: 5px;
+}
+footer .footer_link .footer-tittle {
+  text-align: center;
+  flex: 6;
+}
+
+/*---------------------------------------theam----------------*/
+/*====================================================*/
+.mode{
+  display: grid;
+  border-radius: 6px;
+  position: absolute;
+  transition: 0.3s;
+  left: 5px;
+}
+.mode .sun-moon{
+  font-size: 25px;
+  height: 50px;
+  width: 60px;
+  margin-top: 12px;
+  display: grid;
+}
+.mode .sun-moon i{
+  position: absolute;
+}
+.mode .sun-moon i.sun{
+  opacity: 0;
+}
+body.dark .mode .sun-moon i.sun{
+  opacity: 1;
+}
+body.dark .mode .sun-moon i.moon{
+  opacity: 0;
+}
+.toggle-switch{
+  display: grid;
+  position: absolute;
+  left: 30%;
+  top: -5px;
+  height: 100%;
+  min-width: 60px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.toggle-switch .switch{
+  position: relative;
+  height: 22px;
+  width: 40px;
+  border-radius: 25px;
+  background-color: var(--gray-color);
+  transition: 0.3s;
+}
+
+.switch::before{
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  background-color: var(--white-color);
+  transition: 0.3s;
+}
+
+body.dark .switch::before {
+  left: 20px;
+}
+
+.logo{
+  filter: var(--img);
 }

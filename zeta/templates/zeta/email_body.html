@@ -78,7 +78,7 @@
 <div class="big-device">
     <div class="header">
         <div class="header_left">
-            <img src="{% static 'zeta/logo.png' %}" alt="logo">
+            <img class="logo" src="{% static 'zeta/logo1.png' %}" alt="logo">
         </div>
 
         <div class="header_right">
@@ -148,25 +148,43 @@
 <!--=================footer=====================-->
 <footer>
     <ul class="footer_link">
+        <div class="mode">
+            <div class="sun-moon">
+                <i class='bx bxs-sun sun'></i>
+                <i class='bx bxs-moon moon'></i>
+                <div class="toggle-switch">
+                    <span class="switch"></span>
+                </div>
+            </div>
+        </div>
         <li><a href="{% url 'about_us' %}">About Us</a></li>
         <li><a href="{% url 'privacy_page' %}">Privacy Settings</a></li>
         CopyRight @Zeta
     </ul>
-
 </footer>
 </body>
-<!--Header Start-->
 
 
 <script>
-
-
 
     function toReplyPage(){
         window.location.href = "{% url 'reply' %}";
     }
 
+    const body = document.querySelector('body'),
+        modeSwitch = body.querySelector(".toggle-switch"),
+        modeText = body.querySelector(".mode-text");
 
+    modeSwitch.addEventListener("click" , () =>{
+        body.classList.toggle("dark");
+
+        if(body.classList.contains("dark")){
+            modeText.innerText = "Light mode";
+        }else{
+            modeText.innerText = "Dark mode";
+
+        }
+    });
 
 </script>
 
