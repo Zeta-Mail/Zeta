@@ -13,4 +13,5 @@ urlpatterns = [
     path("about_us", views.about_us, name="about_us"),
     path("reply", views.reply, name="reply"),
     path("compose", views.compose, name="compose"),
+    path("folder_create_page", views.folder_create_page, name="folder_create_page"),
 ]
