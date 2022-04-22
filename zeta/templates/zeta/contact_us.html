@@ -2,38 +2,6 @@
 {% load static %}
 
 {% block body %}
-
-
-<?php
-
-    $message_sent = false;
-
-    if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message']) && $_POST['name'] != '' && $_POST['email'] != '' && $_POST['message'] != ''){
-
-        if(filter_var ($_POST['email'], FILTER_VALIDATE_EMAIL)){
-            //Submit the form 
-
-            $userName = $_POST['name'];
-            $userEmail = $_POST['email'];
-            $userMessage = $_POST['message'];
-
-            $to = "nisini.20191213@iit.ac.lk";
-            $subject = "Response from Zeta Mail Contact form";
-            $body = "You have recieved the following feedback from Zeta Mail contact form. \r\n\r\n";
-
-            $body .="From : ".$userName. "\r\n";
-            $body .="Email Address : ".$userEmail. "\r\n";
-            $body .="The Feedback/Suggestion : ".$userMessage. "\r\n";
-
-            mail($to, $subject, $body);
-
-            $message_sent = true;
-
-        }
-        
-    }
-
-?>
   
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
@@ -58,7 +26,7 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	background: url(bg.jpg);
+	background: linear-gradient(to bottom, #01796f 0%, #1abc9c 100%);; 
 	background-size: cover;
 }
 
@@ -131,27 +99,37 @@
 	font-weight: 500;
 }
 
-.contactForm{
+
+.responseForm{
+    display:none;
+}
+
+.contactForm,
+.responseForm{
 	width: 40%;
 	padding: 40px;
 	background: #fff;
 	border-radius:5%;
 }
 
-.contactForm h2{
+.contactForm h2,
+.responseForm h2{
 	font-size: 30px;
 	color: #003A3A;
 	font-weight: 500;
 }
 
-.contactForm .inputBox{
+.contactForm .inputBox,
+.responseForm .inputBox{
 	width: 100%;
 	position: relative;
 	margin-top: 10px;
 }
 
 .contactForm .inputBox input,
-.contactForm .inputBox textarea{
+.contactForm .inputBox textarea,
+.responseForm .inputBox input,
+.responseForm .inputBox textarea{
 	width: 100%;
 	padding: 5px 0;
 	font-size: 16px;
@@ -162,7 +140,8 @@
 	resize:none;
 }
 
-.contactForm .inputBox span{
+.contactForm .inputBox span,
+.responseForm .inputBox span{
 	position: absolute;
 	left: 0;
 	padding: 5px 0;
@@ -193,7 +172,8 @@
 	font-size: 18px;
 }
 
-.contactForm .inputBox button{
+.contactForm .inputBox button,
+.responseForm .inputBox button{
 	width: 300px;
 	background: teal;
 	color:#fff;
@@ -205,16 +185,19 @@
 	margin-top:20%;
 }
 
-.contactForm .inputBox button a{
+.contactForm .inputBox button a,
+.responseForm .inputBox button a{
 	text-decoration: none;
 	color:#fff;
 }
 
-.contactForm .inputBox input[type="submit"]:hover{
+.contactForm .inputBox input[type="submit"]:hover,
+.responseForm .inputBox input[type="submit"]:hover{
 	background: #003A3A;
 }
 
-.contactForm .inputBox button:hover{
+.contactForm .inputBox button:hover,
+.responseForm .inputBox button:hover{
 	background: #003A3A;
 }
 
@@ -256,9 +239,7 @@
 						<div class = "icon"><i class='bx bx-mail-send'></i></i></div>
 						<div class = "text">
 							<h1>Email Address</h1>
-							<p>nisiniweerathunga1814@gmail.com
-							<br>sachinimalsha20@gmail.com
-							<br>nadundias321@gmail.com</p>
+							<p>contact.zetamail@gmail.com</p>
 						</div>
 					</div>
 					
@@ -273,50 +254,38 @@
 					
 				</div>
 
-                <?php
-                if($message_sent):
-                ?>
+                <div class = "contactForm">
+                    <form action="mailto:contact.zetamail@gmail.com" method="POST">
+                        <h2>Send Message</h2>
+                        <div class="inputBox">
+                            <input type="text" name="name" required="required">
+                            <span>Full Name</span>
+                        </div>
+                        <div class="inputBox">
+                            <input type="email" name="email" required="required">
+                            <span>Email Address</span>
+                        </div>
+                        <div class="inputBox">
+                            <textarea required="required" name="message"></textarea>
+                            <span>Type Your Message...</span>
+                        </div>
+                        <div class="inputBox">
+                            <input type="submit" value="Send" onclick="sendEmail()">
+                        </div>
+                    </form>
+                </div>
 
-                    <div class = "contactForm">
-                        <h2>Thank you for the Feedback!</h2><br>
-                        <h2>We'll be in touch...</h2>
+                
+                <div class = "responseForm">
+                    <h2>Thank you for the Feedback!</h2><br>
+                    <h2>We'll be in touch...</h2>
 
-                        <form>
-                            <div class="inputBox">
-                                <button><a href="ContactPage.php">Send Another Response</a></button>
-                            </div>
-                        </form>
-                    </div>
-
-                <?php
-                else:
-                ?>
-
-                    <div class = "contactForm">
-                        <form action="ContactPage.php" method="POST">
-                            <h2>Send Message</h2>
-                            <div class="inputBox">
-                                <input type="text" name="name" required="required">
-                                <span>Full Name</span>
-                            </div>
-                            <div class="inputBox">
-                                <input type="email" name="email" required="required">
-                                <span>Email Address</span>
-                            </div>
-                            <div class="inputBox">
-                                <textarea required="required" name="message"></textarea>
-                                <span>Type Your Message...</span>
-                            </div>
-                            <div class="inputBox">
-                                <input type="submit" value="Send">
-                            </div>
-                        </form>
-                    </div>
-
-                <?php
-                endif;
-                ?>
-
+                    <form>
+                        <div class="inputBox">
+                            <button onclick="sendAnotherResponse()"><a href="">Send Another Response</a></button>
+                        </div>
+                    </form>
+                </div>
 
 				
 			</div>
@@ -325,6 +294,15 @@
 	</div>
 		
 	<script>
+        function sendEmail() {
+            document.querySelector(".responseForm").style.display = "block";
+            document.querySelector(".contactForm").style.display = "none";
+        }
+
+        function sendAnotherResponse() {
+            document.querySelector(".responseForm").style.display = "none";
+            document.querySelector(".contactForm").style.display = "block";
+        }
     </script>
 </body>
 </html>

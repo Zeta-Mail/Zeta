@@ -34,7 +34,7 @@ def folder_create_page(request):
         return render(request, "zeta/folder_create_page.html")
 
 def contact_us(request):
-    return render(request, "zeta/contact_us.php")
+    return render(request, "zeta/contact_us.html")
 
 def login_view(request):
 
