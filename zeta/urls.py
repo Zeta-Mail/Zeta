@@ -14,4 +14,5 @@ urlpatterns = [
     path("reply", views.reply, name="reply"),
     path("compose", views.compose, name="compose"),
     path("folder_create_page", views.folder_create_page, name="folder_create_page"),
+    path("contact_us", views.contact_us, name="contact_us"),
 ]

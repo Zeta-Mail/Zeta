@@ -33,6 +33,9 @@ def compose(request):
 def folder_create_page(request):
         return render(request, "zeta/folder_create_page.html")
 
+def contact_us(request):
+    return render(request, "zeta/contact_us.php")
+
 def login_view(request):
 
     if request.method == "POST":
