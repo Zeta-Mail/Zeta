@@ -20,3 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("zeta.urls"))
 ]
+
+handler404 = "zeta.views.page_not_found_view"
+handler500 = "zeta.views.server_error_view"

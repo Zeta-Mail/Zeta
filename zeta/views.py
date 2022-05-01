@@ -89,7 +89,15 @@ def contact(request):
 @login_required
 def create(request):
         return render(request, "zeta/create.html")
-    
+
+def page_not_found_view(request, exception):
+
+    return render(request, "zeta/404.html", status=404)
+
+def server_error_view(request, *args, **argv):
+
+    return render(request, "zeta/500.html", status=500)
+
 def login_view(request):
 
     if request.method == "POST":
@@ -147,8 +155,8 @@ def loadSpamModel():
 
     global emails
 
-    clf = pickle.load(open(r"C:\Users\User\Desktop\SDGP\Zeta\zeta\models\zeta\trained_model.pickle", "rb"))
-    vectorizer = pickle.load(open(r'C:\Users\User\Desktop\SDGP\Zeta\zeta\models\zeta\vectorizer.pickle', 'rb'))
+    clf = pickle.load(open(r".\zeta\models\zeta\trained_model.pickle", "rb"))
+    vectorizer = pickle.load(open(r'.\zeta\models\zeta\vectorizer.pickle', 'rb'))
 
     examples = vectorizer.transform(emails)
     predictions = clf.predict(examples)
