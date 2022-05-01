@@ -1,0 +1,22 @@
+{% extends "zeta/layout.html" %}
+{% load static %}
+
+{% block body %}
+        <!--  Email List Start-->
+        <div class="emaillist">
+            <div class="emaillist_setting">
+                <div class="emaillist_settingsleft">
+                    <a href="{% url 'index' %}"><span class="material-icons">arrow_back</span></a>
+
+                </div>
+            </div>
+            <div class="replyDiv">
+                <form action="#" method="#" id="my-form">
+                    <div class="form-group">
+                        <textarea placeholder="Folder Name" name="massage" id="massage" cols="15" rows="3"></textarea>
+                    </div>
+                    <button class="replyBtn" type="submit">Create</button>
+                </form>
+            </div>
+        </div>
+{% endblock %}

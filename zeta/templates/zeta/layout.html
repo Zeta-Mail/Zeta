@@ -5,26 +5,192 @@
 
 <head>
     <title>{% block title %}Zeta{% endblock %}</title>
-    <link rel="icon" type="image/x-icon" href="{% static 'zeta/favicon.png' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'zeta/fav.png' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap" rel="stylesheet" />
 
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="{% static 'zeta/styles.css' %}" rel="stylesheet">
     <link href="{% static 'zeta/login.css' %}" rel="stylesheet">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="817172131549-8ld1gj9r55sq37cr663omb6cmlchq93t.apps.googleusercontent.com">
+    <meta name="google-signin-client_id"
+        content="817172131549-8ld1gj9r55sq37cr663omb6cmlchq93t.apps.googleusercontent.com">
 </head>
 
 <body>
     <!-- header section starts  -->
+    <style>
+        .header_middle input {
+            color: var(--black-light);
+        }
+    </style>
 
-    {% block body %}
-    {% endblock %}
+    <div class="big-device">
+        <div class="header">
+            <div class="header_left">
+                <span class="material-icons menu_icon">menu</span>
+                <img class="logo" src="{% static 'zeta/logo.png' %}" alt="logo">
+            </div>
+
+            <div class="header_middle">
+                <span class="material-icons">search</span>
+                <input type="text" placeholder="Search">
+
+            </div>
+
+            <div class="header_right">
+                <div class="logintext">
+                    {% if user.is_authenticated %}
+                    <span>
+                        <p class="caption">Hi, <strong class="name">{{ user.username.capitalize }}!</strong></p>
+                    </span>
+                    <span><a href="{% url 'logout' %}" class="caption">Log Out</a></span>
+                    {% else %}
+                    <span><a href="{% url 'login' %}" class="caption">Log In</a></span>
+                    {% endif %}
+                </div>
+                <span class="material-icons" style="font-size: 40px;">person</span>
+            </div>
+        </div>
+        <!--Header End-->
+
+        <!--Main Body Start-->
+        <div class="main_body">
+            <!--  Sidebar Start-->
+            <div class="sidebar" id="sidebar">
+                <button onclick="toCompose()" class="sidebar_compose">
+                    <span class="material-icons">add</span>
+                    <p>Compose</p>
+                </button>
+
+                <div class="sidebarOption inboxBtn" onclick="window.location.href = '{% url 'index' %}';">
+                    <span class="material-icons">inbox</span>
+                    <h3>Inbox</h3>
+                </div>
+
+                <div class="sidebarOption spamBtn" onclick="window.location.href = '{% url 'spam' %}';">
+                    <span class="material-icons">report</span>
+                    <h3>Spam</h3>
+                </div>
+
+                <div class="sidebarOption importantBtn" onclick="window.location.href = '{% url 'important' %}';">
+                    <span class="material-icons">star</span>
+                    <h3>Important</h3>
+                </div>
+                <div class="sidebarOption importantBtn" onclick="window.location.href = '{% url 'trash' %}';">
+                    <span class="material-icons">delete</span>
+                    <h3>Trash</h3>
+                </div>
+
+                {% block sidebarfolders %}
+                {% endblock %}
+
+                <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"
+                    rel="stylesheet" />
+                <select class="selectmenu">
+                    <option class="selectoption">&#xf07b; Folders</option>
+                    <option>&#xf07b; IIT</option>
+                    <option>&#xf07b; UoW</option>
+                    <option>&#xf07b; IEEE</option>
+                    <option>&#xf07b; SDGP</option>
+                </select>
+                <div class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bxs-sun sun'></i>
+                        <i class='bx bxs-moon moon'></i>
+                        <div class="toggle-switch">
+                            <span class="switch"></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--  Sidebar End-->
+
+            {% block body %}
+            {% endblock %}
+
+        </div>
+        <!--Main Body End-->
+
+        <!-- Footer Start -->
+        <footer id="contact">
+            <ul class="social">
+                <div id="icon-container">
+                    <a href="https://twitter.com/">
+                        <div class="icon">
+                            <li><i class="fab fa-twitter"></i></li>
+                        </div>
+                    </a>
+                    <a href="https://mail.google.com/">
+                        <div class="icon">
+                            <li><i class="fas fa-at"></i></li>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/">
+                        <div class="icon">
+                            <li><i class="fab fa-linkedin"></i></li>
+                        </div>
+                    </a>
+                    <a href="https://github.com/Zeta-Mail/Zeta">
+                        <div class="icon">
+                            <li><i class="fab fa-github"></i></li>
+                        </div>
+                    </a>
+                    <a href="https://stackoverflow.com/">
+                        <div class="icon">
+                            <li><i class="fab fa-stack-overflow"></i></li>
+                        </div>
+                    </a>
+                </div>
+            </ul>
+            <p>&copy; 2021-2022 | DSN3 Loopers</p>
+            <ul class="footermiddle">
+                <li><a href="{% url 'about' %}">About Us</a></li>
+                <li><a href="{% url 'privacy' %}">Privacy</a></li>
+                <li><a href="{% url 'contact' %}">Contact Us</a></li>
+            </ul>
+        </footer>
+        <!-- Footer End -->
+    </div>
+
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".menu_icon");
+
+        console.log(sidebarBtn);
+        sidebarBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("close");
+        });
+
+        function toCompose() {
+            window.location.href = "{% url 'compose' %}";
+        }
+
+        const body = document.querySelector('body'),
+            modeSwitch = body.querySelector(".toggle-switch"),
+            modeText = body.querySelector(".mode-text");
+
+
+        modeSwitch.addEventListener("click", () => {
+            body.classList.toggle("dark");
+
+            if (body.classList.contains("dark")) {
+                modeText.innerText = "Light mode";
+            } else {
+                modeText.innerText = "Dark mode";
+            }
+        });
+
+    </script>
+
 </body>
 
 </html>

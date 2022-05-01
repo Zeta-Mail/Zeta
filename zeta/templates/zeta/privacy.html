@@ -1,4 +1,4 @@
-{% extends "zeta/layout.html" %}
+{% extends "zeta/loginlayout.html" %}
 {% load static %}
 
 {% block body %}
@@ -231,8 +231,8 @@
     </div>
     <div class="privacy-policy-nav-menu">
         <ul class="privacy-nav-menu-wrapper">
-            <li class='privacy-nav-menu1' ><a href="{% url 'home' %}" class="privacy-policy-link">Home Page</a></li>
-            <li class="privacy-nav-menu2" ><a href="{% url 'about_us' %}" class="site-map-link">About Us</a></li>
+            <li class='privacy-nav-menu1' ><a href="{% url 'index' %}" class="privacy-policy-link">Home Page</a></li>
+            <li class="privacy-nav-menu2" ><a href="{% url 'about' %}" class="site-map-link">About Us</a></li>
         </ul>
     </div>
 </div>

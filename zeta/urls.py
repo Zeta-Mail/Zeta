@@ -4,14 +4,18 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("home", views.home, name="home"),
+    path("spam", views.spam, name="spam"),
+    path("trash", views.trash, name="trash"),
+    path("important", views.important, name="important"),
+    path("loading", views.loading, name="loading"),
     path("login", views.login_view, name="login"),
     path("logout", views.logout_view, name="logout"),
     path("register", views.register, name="register"),
-    path("email_body", views.email_body, name="email_body"),
-    path("privacy_page", views.privacy_page, name="privacy_page"),
-    path("about_us", views.about_us, name="about_us"),
+    path("email/<str:email_id>", views.email, name="email"),
+    path("privacy", views.privacy, name="privacy"),
+    path("about", views.about, name="about"),
+    path("contact", views.contact, name="contact"),
     path("reply", views.reply, name="reply"),
     path("compose", views.compose, name="compose"),
-    path("folder_create_page", views.folder_create_page, name="folder_create_page"),
+    path("create", views.create, name="create"),
 ]

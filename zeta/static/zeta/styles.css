@@ -43,6 +43,13 @@ body.dark{
   overflow: hidden;
 }
 
+body {
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: var(--body-color);
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -84,16 +91,41 @@ body.dark{
   display: flex;
   padding-right: 20px;
 }
-.header .header_right span {
+
+.header .header_right .logintext{
+  display: flex;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+
+.header .header_right .logintext span {
   padding: 10px;
 }
+.header .header_right .logintext span a{
+  color:#333;
+  text-decoration: underline;
+}
+
+.header .header_right .logintext span p{
+  color:#555;
+}
+
+.header .header_right .logintext span p .name{
+  color: #6521FF;
+}
+
+.header .header_right .material-icons{
+  margin-top: 1rem;
+  color:#555;
+}
+
 .material-icons {
   color: var(--gray-color );
 }
 .sidebar {
+  background-color: #dfe6e9;
   flex: 0.3;
   max-width: 300px;
-  padding-right: 20px;
 }
 .sidebar .sidebar_compose {
   align-content: initial;
@@ -102,7 +134,7 @@ body.dark{
   margin-bottom: 15px;
   text-transform: capitalize;
   color: var(--gray-color);
-  padding: 15px;
+  padding: 3px 30px;
   border-radius: 30px;
   background-color: var(--white-color);
   display: flex;
@@ -124,8 +156,6 @@ body.dark{
   align-items: center;
   height: 40px;
   padding: 0 10px;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
   cursor: pointer;
   color: #818181;
 }
@@ -191,11 +221,7 @@ body.dark{
   display: flex;
   align-items: center;
 }
-body {
-  height: 100vh;
-  overflow: hidden;
-  background-color: var(--body-color);
-}
+
 .emaillist_section {
   position: sticky;
   top: 0;
@@ -285,7 +311,7 @@ body {
 }
 
 .emaillist{
-  overflow-y: visible;
+  overflow: auto;
 }
 .sidebar.close{
   display: none;
@@ -294,34 +320,107 @@ body {
   display: none;
 }
 /*------------------------------------Footer--------------------------*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
 footer {
+  padding-top: 0.65rem;
   position: absolute;
-  bottom: 0;
   width: 100%;
-  height: 70px;
-  background: var(--footer-bac);
-  box-shadow: var(--shaow-color);
+  bottom: 0;
 }
-footer .footer_link {
+
+#contact .social {
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+
+#contact .social li {
   list-style: none;
+}
+
+#contact a {
+  color: #3a3636;
+  margin: 10px;
+}
+
+#contact {
+  color: #fff;
+  height: 70px;
   display: flex;
-  align-items: center;
+  background-color:#3a3636;
+}
+
+.icon {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  padding-top: 5px;
   justify-content: center;
-  margin: 1rem 0 3rem 0;
-  color: var(--black-light);
+  align-items: center;
+  transition: transform 1s, box-shadow 0.5s;
+  box-shadow: 0 2px 3px rgb(0 0 0 / 12%), 0 2px 2px rgb(0 0 0 / 24%);
 }
-footer .footer_link li {
-  margin: 0 10px;
+
+#icon-container {
+  display: flex;
 }
-footer .footer_link a {
-  text-decoration: none;
-  border: 1.1px solid var(--white-color);
-  padding: 5px;
-  color: var(--black-light);
+
+.icon:hover {
+  color: #4f0505;
 }
-footer .footer_link .footer-tittle {
-  text-align: center;
-  flex: 6;
+
+#contact p {
+  padding-left: 25%;
+    padding-top: 1rem;
+    font-size: 14px;
+}
+
+#contact .footermiddle{
+  padding-left: 20%;
+  padding-top: 1rem;
+  display: flex;
+  color: #fff;
+}
+
+#contact .footermiddle a{
+  color: #fff;
+}
+
+@media screen and (max-width: 426px) {
+ #icon {
+   width: 30px;
+   height: 30px;
+  }
+  
+  ul li {
+    font-size: 12px;
+  }
+  
+  #contact p {
+    font-size: 10px;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+ #icon {
+   width: 50px;
+   height: 50px;
+  }
+  
+  ul li {
+    font-size: 20px;
+  }
+  
+  #contact p {
+    font-size: 16px;
+  }
 }
 
 /*emailBody*/
@@ -331,17 +430,20 @@ footer .footer_link .footer-tittle {
   margin-right: 20px;
   color: var(--black-light);
 }
+.emailBody_header{
+  margin-top: 0.5rem;
+  clear: both;
+}
 .emailBody_sender{
   color: var(--black-light);
 }
 .emailBody_time{
-  text-align: right;
-  margin-right: 20px;
-
+  margin-top: 0.5rem;
+  float: right;
 }
-
 .emailBody_subject{
   color: var(--gray-color);
+  float: left;
 }
 .form-group {
   width: 100%;
@@ -362,16 +464,18 @@ textarea {
   resize: vertical;
 }
 .replyBtn{
-  width: 15%;
-  height: 30px;
+  background-color:#3a3636;
+  margin-top: 30px;
+  padding-left: 30px;
+  height: 43px;
+  width: 145px;
   font-weight: 1000;
   text-transform: capitalize;
   text-align: center;
-  color: gray;
+  align-items: center;
+  color: white;
   border-radius: 5px;
-  background-color: white;
   display: flex;
-  align-items: normal;
   cursor: pointer;
   outline: none;
   border: none;
@@ -382,20 +486,44 @@ textarea {
   opacity: 0.5;
 }
 
+.submitBtn {
+  margin-left: 2rem;
+  width: 92%;
+  height: 50px;
+  font-weight: 1000;
+  text-transform: capitalize;
+  color: white;
+  border-radius: 5px;
+  background-color:#3a3636;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  align-items: center;
+}
+
+.submitBtn:hover {
+  opacity: 0.5;
+}
+
 /*---------------------------------------theam----------------*/
 /*====================================================*/
 .mode{
+  position: absolute;
+  margin-top: 13%;
+  margin-left: 10px;
   display: grid;
   border-radius: 6px;
-  position: absolute;
   transition: 0.3s;
   left: 5px;
 }
 .mode .sun-moon{
-  font-size: 25px;
+  font-size: 23px;
+  color: var(--gray-color);
   height: 50px;
-  width: 60px;
-  margin-top: 12px;
+  width: 100px;
+  margin-top: 10px;
   display: grid;
 }
 .mode .sun-moon i{
@@ -413,15 +541,13 @@ body.dark .mode .sun-moon i.moon{
 .toggle-switch{
   display: grid;
   position: absolute;
-  left: 30%;
-  top: -5px;
+  left: 37%;
+  top: -9px;
   height: 100%;
-  min-width: 60px;
   align-items: center;
-  justify-content: center;
-  border-radius: 6px;
   cursor: pointer;
 }
+
 .toggle-switch .switch{
   position: relative;
   height: 22px;
@@ -449,5 +575,31 @@ body.dark .switch::before {
 }
 
 .logo{
-  filter: var(--img);
+  width: auto;
+  height: auto;
+  image-rendering: auto;
+}
+
+.selectmenu {
+  word-spacing: 18px;
+  font-family: 'FontAwesome', Arial;
+  margin-left: 6px;
+  background-color: transparent;
+  color: gray;
+  padding: 7px;
+  padding-left: 10px;
+  width: 250px;
+  border: none;
+  font-size: 14px;
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+  
+}
+
+.selectoption {
+  padding: 30px;
+  background-color: transparent;
+  color: gray;
+  outline: none;
 }

@@ -1,0 +1,65 @@
+{% extends "zeta/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+<!--  Email List Start-->
+<div class="emaillist">
+    <!--    Setting Start-->
+    <div class="emaillist_setting">
+        <div class="emaillist_settingsleft">
+            <a href="{% url 'index' %}"><span class="material-icons">arrow_back</span></a>
+            <span class="material-icons">report</span>
+            <span class="material-icons">delete</span>
+            <span class="material-icons">drive_file_move</span>
+
+        </div>
+
+        <audio id="audio" src="{% static 'zeta/text.mp3' %}"></audio>
+
+        <div class="emaillist_settingsright">
+            <span class="material-icons" onclick="play()">volume_up</span>
+            <span class="material-icons" onclick="pause()">pause</span>
+        </div>
+    </div>
+    <div class="emailBody_content">
+        <div class="emailBody_header">
+            <h3 class="emailBody_subject">{{ email.subject }}</h3>
+            <p class="emailBody_time">{{ email.time }}</p>
+        </div>
+        <div class="emailBody_sender">
+            <h5>From: {{ email.username }}</h5>
+            <h6>To: me </h6>
+        </div>
+        <br>
+        {{ email.body }}
+
+        <button class="replyBtn" onclick="toReplyPage()" type="submit">
+            <span class="material-icons">reply</span>
+            Reply</button>
+
+    </div>
+
+    <!--    Email List Row End-->
+</div>
+
+
+<script>
+
+    function toReplyPage() {
+        window.location.href = "{% url 'reply' %}";
+    }
+
+    var audio = document.getElementById("audio");
+
+    function play() {
+        audio.play();
+    }
+
+    function pause() {
+        audio.pause();
+    }
+
+</script>
+
+{% endblock %}

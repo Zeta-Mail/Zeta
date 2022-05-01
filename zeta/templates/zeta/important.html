@@ -1,0 +1,48 @@
+{% extends "zeta/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+<!--  Email List Start-->
+<div class="emaillist">
+    <!--    Setting Start-->
+    {% for email in important %}
+    <a href="{% url 'email' email.id %}">
+        <div class="emailRow">
+            <div class="emailRow_options">
+                <input type="checkbox" />
+                <span class="material-icons">star_border</span>
+                <span class="material-icons">label_important</span>
+            </div>
+            <div class="emailRow_title">{{ email.username }}</div>
+            <div class="emailRow_message">
+                <h6>{{ email.subject }} <span class="emailRow_description">
+                    </span></h6>
+            </div>
+            <div class="emailRow_time">10pm</div>
+        </div>
+    </a>
+
+    {% empty %}
+    <div class="empty">
+        <img src="https://i.pinimg.com/originals/53/14/0c/53140c59edfb0348a4d2ead074251694.gif" alt=""
+            class="emptyImage">
+        <h4>Hoooray.....</h4><br>
+        <h5>No important emails yet!</h5>
+    </div>
+    {% endfor %}
+</div>
+</div>
+
+<style>
+    .empty {
+        text-align: center;
+    }
+
+    .emptyImage {
+        width: 500px;
+        height: auto;
+    }
+</style>
+
+{% endblock %}

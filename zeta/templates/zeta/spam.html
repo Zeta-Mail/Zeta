@@ -1,12 +1,6 @@
 {% extends "zeta/layout.html" %}
 {% load static %}
 
-{% block sidebarfolders %}
-
-{% endblock %}
-
-
-
 {% block body %}
 
 <!--  Email List Start-->
@@ -26,8 +20,7 @@
         </div>
     </div>
     <div class="inboxMails">
-
-        {% for email in emails %}
+        {% for email in spams %}
         <a href="{% url 'email' email.id %}">
             <div class="emailRow">
                 <div class="emailRow_options">
@@ -40,14 +33,13 @@
                     <h6>{{ email.subject }} <span class="emailRow_description">
                         </span></h6>
                 </div>
-                <div class="emailRow_time">{{ email.date }}</div>
+                <div class="emailRow_time">10pm</div>
             </div>
         </a>
 
         {% empty %}
         <li>No active listings</li>
         {% endfor %}
-
     </div>
 </div>
 
