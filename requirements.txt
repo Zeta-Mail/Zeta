@@ -1,6 +1,5 @@
 Django==4.0.3
 whitenoise==6.0
 gtts
-os.path
 bs4
 google-api-python-client
