@@ -1,0 +1,861 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap');
+
+:root{
+    /* ===== Colors ===== */
+    --body-color: #E4E9F7;
+    --sidebar-color: #FFF;
+    --primary-color: #040A3F;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #DDD;
+    --text-color: #707070;
+
+    /* ====== Transition ====== */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.3s ease;
+}
+
+body.dark{
+    --body-color: #18191a;
+    --sidebar-color: #242526;
+    --primary-color: #6c6f70;
+    --primary-color-light: #3a3b3c;
+    --toggle-color: #fff;
+    --text-color: #ccc;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.visibleText{
+	margin: 5%;
+	font-size: 20px;
+	font-family: 'Syne Tactile', cursive;
+	color: var(--primary-color);
+}
+
+
+@media only screen and (min-width: 481px) {
+	.Phone{
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 480px) and (max-height: 916px) {
+	.visible{
+		display: none;
+	}
+	
+	.Phone{
+		display: block;
+	}
+	
+	
+	/*--------------------------Overlay------------------------------*/
+	.overlay{
+		position: fixed;
+		height: 100%;
+		width: 0; 
+		z-index: 1;
+		left: 0;
+		top: 0;
+		z-index: 100;
+		background: var(--sidebar-color);
+		overflow-x: hidden; 
+		overflow-y: hidden; 
+		transition:var(--tran-05);
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.overlay .logo-details{
+		height: 60px;
+		width: 100%;
+		display: flex;
+		align-items: center;
+	}
+	.overlay .logo-details i{
+		font-size: 40px;
+		color: var(--primary-color);
+		height: 50px;
+		min-width: 78px;
+		text-align: center;
+		line-height: 50px;
+	}
+	.overlay .logo-details .logo_name{
+		font-size: 50px;
+		font-family: 'Syne Tactile', cursive;
+		color: var(--primary-color);
+		font-weight: 1000;
+		transition: 0.3s ease;
+		transition-delay: 0.1s;
+	}
+
+	.overlay .nav-links{
+		height: 100%;
+		padding: 30px 0 150px 0;
+		overflow: auto;
+	}
+
+	.overlay .nav-links::-webkit-scrollbar{
+		display: none;
+	}
+		
+	.overlay .nav-links li{
+		position: relative;
+		list-style: none;
+		transition: all 0.4s ease;
+		font-size: 40px;
+	}
+	.overlay .nav-links li:hover{
+		background: var(--primary-color);
+		color:white;
+	}
+
+	.overlay .nav-links li .iocn-link{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.overlay .nav-links li i{
+		height: 50px;
+		min-width: 78px;
+		text-align: center;
+		line-height: 50px;
+		color: var(--text-color);
+		font-size: 35px;
+		cursor: pointer;
+		transition: var(--tran-03);
+	}
+
+	.overlay .nav-links li a,
+	.overlay .nav-links li button{
+		display: flex;
+		align-items: center;
+		text-decoration: none;
+	}
+	
+	.overlay .nav-links li button{
+		background: var(--sidebar-color);
+		border:none;
+		width:100%;
+	}
+	
+	.overlay .nav-links li a .link_name,
+	.overlay .nav-links li button .link_name{
+		font-size: 18px;
+		font-weight: 400;
+		color: var(--text-color);
+		transition: var(--tran-03);
+	}
+	.overlay .nav-links li i:hover{
+		color: var(--sidebar-color);
+	}
+	.overlay .nav-links li a .link_name:hover,
+	.overlay .nav-links li button .link_name:hover{
+		color: var(--sidebar-color);
+	}
+
+	.overlay .nav-links li button:hover,
+	.overlay .nav-links li button:focus{
+		background: var(--primary-color);
+		color: var(--sidebar-color);
+	}
+
+	.overlay.close ~ .home-section{
+		width: calc(100% - 78px);
+		left: 5px;
+		top:10px;
+	}
+
+	/*================================================================*/
+	
+	/*------------------------------mode------------------------------*/
+	.mode{
+		border-radius: 6px;
+		background-color: var(--primary-color-light);
+		position: relative;
+		transition: var(--tran-05);
+	}
+	.mode .sun-moon{
+		height: 50px;
+		width: 60px;
+	}
+	.mode .sun-moon i{
+		position: absolute;
+	}
+	.mode .sun-moon i.sun{
+		opacity: 0;
+	}
+	body.dark .mode .sun-moon i.sun{
+		opacity: 1;
+	}
+	body.dark .mode .sun-moon i.moon{
+		opacity: 0;
+	}
+	.toggle-switch{
+		position: absolute;
+		right: 0;
+		height: 100%;
+		min-width: 60px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 6px;
+		cursor: pointer;
+	}
+	.toggle-switch .switch{
+		position: relative;
+		height: 22px;
+		width: 40px;
+		border-radius: 25px;
+		background-color: var(--toggle-color);
+		transition: var(--tran-05);
+	}
+
+	.switch::before{
+		content: '';
+		position: absolute;
+		height: 15px;
+		width: 15px;
+		border-radius: 50%;
+		top: 50%;
+		left: 5px;
+		transform: translateY(-50%);
+		background-color: var(--sidebar-color);
+		transition: var(--tran-04);
+	}
+
+	body.dark .switch::before {
+		left: 20px;
+	}
+
+	/*=======================================================*/
+	
+	/*---------------------Home Section----------------------*/
+	
+
+	.home{
+		position: relative;
+	}
+
+	.home .home-content{
+		margin-top:5%;
+		margin-left: 5%;
+		height: 60px;
+		display: flex;
+		align-items: center;
+	}
+
+	.home .home-content .bx-menu{
+		color: var(--primary-color);
+		font-size: 35px;
+		cursor: pointer;
+	}
+
+	.home .home-content .text{
+		font-size: 26px;
+		font-weight: 600;
+		color: var(--primary-color);
+	}
+
+	.homeContainer{
+		margin-top: 5%;
+		width: 100%;
+	}
+
+	.homeContainer button{
+		width: 100%;
+		border:none;
+		background-color: white;
+		text-align: left;
+		padding:2%;
+		padding-left:5%;
+		padding-right:5%;
+		font-size: 16px;
+		display:flex;
+		
+	}
+
+	.homeContainer button span{
+		margin-left:5%;
+		width:80%;
+	}
+
+	.homeContainer img{
+		width: 45px;
+		height: 45px;
+	}
+
+	.reloadDelete button{
+		width: 50px;
+		height: 50px;
+		padding:3%;
+		
+	}
+
+
+	.reloadDelete button img{
+		width: 25px;
+		height: 25px;
+	}
+
+	.reloadDelete{
+		display:flex;
+	}
+	
+
+	.homeContainer .emailBody{
+		display:none;
+		width: 100%;
+		padding:2%;
+		padding-left:5%;
+		padding-right:5%;
+	}
+
+	.homeContainer .emailBody .SubjectOfMail{
+		margin-top:5%;
+		font-size: 20px;
+	}
+
+
+	.homeContainer .emailBody .SenderName{
+		margin-top:5%;
+		display:flex;
+	}
+
+	.homeContainer .emailBody .SenderName span{
+		margin-left:5%;
+	}
+
+	.homeContainer .emailBody .time{
+		font-size: 12px;
+	}
+
+	.homeContainer .emailBody .emailContent{
+		margin-top:10%;
+	}
+
+	.emailBody button{
+		width: 100px;
+		background: var(--primary-color);
+		color:#fff;
+		border-radius: 5%;
+		border:none;
+		cursor:pointer;
+		padding:10px;
+		font-size: 18px;
+		margin-top:20%;
+		
+	}
+
+	.emailbuttons{
+		display: flex;
+	}
+
+	.emailBody .replyToEmail{
+		margin-left: 50%;
+	}
+
+	.emailBody .backToEmail p,
+	.replyToEmail p{
+		margin:auto;
+	}
+
+
+	/*=====================================================================================*/
+	.replyOverlay{
+		position: fixed;
+		height: 100%;
+		width: 0%; 
+		z-index: 1;
+		left: 0;
+		top: 0;
+		z-index: 100;
+		background: #FFF;
+		overflow-x: hidden; 
+		overflow-y: hidden; 
+	}
+
+	.replyOverlay .backButton {
+		margin-top: 3%;
+		margin-bottom: 3%;
+		border:none;
+		color: black;
+		background-color: white;
+		font-family:"Poppins";
+		font-size:20px;
+		padding:2%;
+		width:100%;
+		text-align: left;
+		
+	}
+
+	.replyOverlay .replyEmailForm input,
+	.replyOverlay .replyEmailForm textarea{
+		width: 85%;
+		margin-left: 5%;
+		padding: 5px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		font-size: 18px;
+		border: none;
+		outline: none;
+		resize:none;
+	}
+
+	.replyOverlay .replyEmailForm textarea{
+		margin-top: 5%;
+	}
+
+	.sendEmailReply{
+		display:none;
+		position:fixed;
+		width:100px;
+		height:50px;
+		bottom:40px;
+		right:40px;
+		background-color:var(--primary-color);
+		color: white;
+		border-radius:5px;
+		text-align:center;
+		box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		font-size:18px;
+		border:none;
+	}
+
+
+	/*=====================================================================================*/
+
+	.composeOverlay{
+		position: fixed;
+		height: 100%;
+		width: 0%; 
+		z-index: 1;
+		left: 0;
+		top: 0;
+		z-index: 100;
+		background: #FFF;
+		overflow-x: hidden; 
+		overflow-y: hidden; 
+	}
+
+	.composeOverlay .backButton {
+		margin-top: 3%;
+		margin-bottom: 3%;
+		border:none;
+		color: black;
+		background-color: white;
+		font-family:"Poppins";
+		font-size:20px;
+		padding:2%;
+		width:100%;
+		text-align: left;
+		
+	}
+
+	.composeOverlay .composeEmailForm input,
+	.composeOverlay .composeEmailForm textarea{
+		width: 85%;
+		margin-left: 5%;
+		padding: 5px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		font-size: 18px;
+		border: none;
+		outline: none;
+		resize:none;
+	}
+
+	.composeOverlay .composeEmailForm textarea{
+		margin-top: 5%;
+	}
+
+	.sendEmailComposed{
+		display:none;
+		position:fixed;
+		width:100px;
+		height:50px;
+		bottom:40px;
+		right:40px;
+		background-color:var(--primary-color);
+		color: white;
+		border-radius:5px;
+		text-align:center;
+		box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		font-size:18px;
+		border:none;
+	}
+
+
+	/*=====================================================================================*/
+	
+
+	
+	/*-------------------searchBar---------------------------*/
+	.boxContainer{
+		width: 85%;
+		min-height: 50vh;
+		padding: 5%;
+		background-size: cover;
+		display: flex;
+		align-items: center;
+		justify-content: left;
+	}
+
+	.search-bar{
+		width: 100%;
+		height: 50px;
+		max-width: 700px;
+		background: #c7c8d4;
+		display: flex;
+		align-items: center;
+		border-radius: 60px;
+		padding: 10px 20px;
+		backdrop-filter: blur(4px) saturate(180%);
+	}
+	.search-bar input{
+		background: transparent;
+		flex: 1;
+		border: 0;
+		outline: none;
+		padding: 24px 20px;
+		font-size: 20px;
+		color: var(--primary-color);
+	}
+	::placeholder{
+		color: var(--primary-color);
+	}
+	.search-bar button i{
+		font-size: 30px;
+		color: var(--primary-color);
+	}
+
+	.search-bar button{
+		border: 0;
+		width: 0px;
+		height: 50px;
+		margin-top: 2px;
+		margin-right: 20px;
+		cursor: pointer;
+	}
+	
+
+	.compose{
+		position:fixed;
+		width:70px;
+		height:70px;
+		bottom:40px;
+		right:40px;
+		background-color:white;
+		border-radius:50px;
+		text-align:center;
+		box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		border:none;
+	}
+
+	.compose i{
+		font-size:33px;
+		color: var(--primary-color);
+		margin:auto;
+	}
+	
+	/*=======================================================*/
+	
+	/*--------------------------Dialog box-------------------*/
+	
+	/* The Modal (background) */
+	
+    .modal,
+    .modal1,
+    .modal2,
+    .modal3,
+    .modal4{
+		display: none; /* Hidden by default */
+		position: fixed; /* Stay in place */
+		z-index: 1; /* Sit on top */
+		padding-top: 100px; /* Location of the box */
+		left: 0;
+		top: 0;
+		width: 100%; /* Full width */
+		height: 100%; /* Full height */
+		overflow: auto; /* Enable scroll if needed */
+		background-color: rgb(0,0,0); /* Fallback color */
+		background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	}
+
+	/* Modal Content */
+	.modal-content,
+    .modal-content1,
+    .modal-content2,
+    .modal-content3,
+    .modal-content4{
+		background-color: #fefefe;
+		margin: auto;
+		padding: 20px;
+		border: 1px solid #888;
+		width: 85%;
+		height: 50%;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.modal-content2,
+    .modal-content3{
+    	height: 70%;
+    }
+
+	/* The Close Button */
+	.close,
+    .close1,
+    .close2,
+    .close3,
+    .close4{
+		color: #aaaaaa;
+		float: right;
+		font-size: 28px;
+		font-weight: bold;
+	}
+
+	.close:hover,
+	.close:focus,
+    .close1:hover,
+	.close1:focus,
+    .close2:hover,
+	.close2:focus,
+    .close3:hover,
+	.close3:focus,
+    .close4:hover,
+	.close4:focus{
+		color: #000;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	.textfilter{
+		font-family: 'Poppins';
+		color:#040A3F;
+		font-size:18px;
+		margin-top:15%;
+		margin-left:5%;
+		margin-bottom:10px;
+	}
+
+	.Filter button{
+		font-family: 'Poppins';
+		color:#A4A4A4;
+		font-size:17px;
+		border: 0;
+		border-radius: 2%;
+		width: 200px;
+		height: 35px;
+		background:white;
+		cursor: pointer;
+		margin-top:5%;
+		margin-left:12%;
+		margin-bottom:0px;
+		text-align: left;
+		padding:5px;
+		}
+		
+	.Filter hr{
+		border-bottom:none;
+	}
+	.Filter i{
+		float:right;
+		margin-right:10px;
+	}
+	.Filter :hover{
+		background:#EEF1FC;
+		color:black;
+	}
+
+	.FilterOptions button{
+		font-family: 'Poppins';
+		color:#A4A4A4;
+		font-size:17px;
+		border: 0;
+		border-radius: 2%;
+		width: 175px;
+		height: 35px;
+		background:white;
+		cursor: pointer;
+		text-align: left;
+		padding:5px;
+		margin-left:35%;
+	}
+		
+	.FilterOptions :hover{
+		background:#EEF1FC;
+		color:black;
+	}
+
+	.FilterO{
+		display:none;
+		width:175px;
+        }
+        
+	.back button,
+	.create button{
+		font-family: 'Poppins';
+		color:#040A3F;
+		font-size:16px;
+		border-radius: 5%;
+		width: 80px;
+		height: 35px;
+		background:white;
+		cursor: pointer;
+		margin-top:10%;
+		margin-left:5%;
+		padding:5px;
+		border-color:#A4A4A4;
+	}
+
+	.create button{
+		float:right;
+		margin-right:5%;
+		background:#040A3F;
+		color:#FFF;
+		width: 140px;
+		border-color:#000;
+	}
+
+	.back button:hover,
+	.create button:hover{
+		color:#000;
+		background:#E8F1FF;
+		border-color:#A4A4A4;
+	}
+
+	.modal1 input[type=text],
+	.modal1 input[type=email],
+	.modal2 input[type=text],
+	.modal2 input[type=email],
+	.modal3 input[type=text],
+	.modal3 input[type=email],
+	.modal4 input[type=text],
+	.modal4 input[type=email]{
+		font-family: 'Poppins';
+		width: 80%;
+		padding: 10px;
+		padding-left: 10px;
+		padding-bottom:3px;
+		margin-left: 5%;
+		margin-top: 2%;
+		box-sizing: border-box;
+		border-top:none;
+		border-left:none;
+		border-right:none;
+		border-color:#A4A4A4;
+		color:#A4A4A4;
+		font-size:16px;
+	}
+	
+	/*=====================================================================================*/
+	.settingsOverlay{
+		position: fixed;
+		height: 100%;
+		width: 0%; 
+		z-index: 1;
+		left: 0;
+		top: 0;
+		z-index: 100;
+		background: #FFF;
+		overflow-x: hidden; 
+		overflow-y: hidden; 
+	}
+
+	.settingsOverlay .backButton {
+		border:none;
+		color: #707070;
+		background-color: white;
+		font-family:"Poppins";
+		font-size:25px;
+		padding-top:2%;
+		padding-right:80%;
+		padding-left:2%;
+	}
+
+	.settingsOverlay a{
+		text-decoration:none;
+		color: #707070;
+		margin-left:5%;
+		font-size:19px;
+		padding-right:45%;
+	}
+
+	.settingsOverlay hr{
+		border-bottom:none;
+		margin-left:2%;
+		margin:2.5%;
+	}
+
+	
+	@media only screen and (max-width: 360px) and (max-height: 640px) {
+		.search-bar{
+			width: 115%;
+		}
+		
+		.compose button{
+			bottom:-10px;
+			right:-80px;
+		}
+		
+		.modal-content{
+			height: 60%;
+		}
+		
+		.modal-content1,
+		.modal-content4{
+			height: 70%;
+		}
+		
+		.modal-content2,
+		.modal-content3{
+			height: 90%;
+		}
+
+		.back button,
+		.create button{
+			margin-top:20%;
+		}
+	}
+	
+	
+	@media only screen and (max-width: 376px) and (max-height: 668px) {
+		.search-bar{
+			width: 110%;
+		}
+		
+		.compose button{
+			bottom:10px;
+			right:-55px;
+		}
+		
+		.modal-content{
+			height: 60%;
+		}
+		
+		.modal-content1,
+		.modal-content4{
+			height: 70%;
+		}
+		
+		.modal-content2,
+		.modal-content3{
+			height: 90%;
+		}
+
+		.back button,
+		.create button{
+			margin-top:20%;
+		}
+	}
+
+}
