@@ -6,7 +6,7 @@ Zeta is an email classification web-application for 2nd-year SDGP group project.
 
 ## Contributors
 
-<a href="https://github.com/Zeta-Mail/Zeta/graphs/contributors">
+<a href="https://github.com/Zeta-Mail/Zeta/pulse">
   <img src="https://contrib.rocks/image?repo=Zeta-Mail/Zeta" alt=" Github Zeta Contributors" />
 </a>
 
