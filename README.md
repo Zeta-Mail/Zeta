@@ -1,6 +1,6 @@
-======
-Zeta
-======
+
+<h1>Zeta</h1>
+
 
 Zeta is an email classification web-application for 2nd-year SDGP group project.
 
@@ -53,9 +53,7 @@ git push --set-upstream origin feature/<BRANCH_NAME>
 <br>
 
 
-======
-Django
-======
+<h1>Django</h1>
 
 Django is a high-level Python web framework that encourages rapid development
 and clean, pragmatic design. Thanks for checking it out.
